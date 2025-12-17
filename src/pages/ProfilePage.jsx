@@ -255,6 +255,13 @@ export default function ProfilePage() {
               .toUpperCase()}
           </div>
 
+          {/* Verified Badge */}
+          <div className="mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-green-100 text-green-800 border-2 border-green-200 shadow-sm">
+              ✓ Verified CUNY Student
+            </span>
+          </div>
+
           {/* FULL NAME */}
           <div className="w-full max-w-md text-left mb-4">
             <label className="text-xs text-gray-500 font-semibold">

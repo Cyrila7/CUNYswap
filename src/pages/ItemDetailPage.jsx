@@ -332,11 +332,14 @@ export default function ItemDetailPage() {
             </p>
           )}
 
-          <div className="mt-6 text-sm text-gray-500">
-            <p>
+          <div className="mt-6 text-sm">
+            <div className="flex items-center gap-2">
               <span className="font-medium text-gray-700">Seller: </span>
-              {item.userName || "Unknown"}
-            </p>
+              <span className="text-gray-600">{item.userName || "Unknown"}</span>
+              <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-green-100 text-green-800 border border-green-200">
+                ✓ Verified CUNY Student
+              </span>
+            </div>
           </div>
 
           {/* Message seller - disabled if sold or own item */}

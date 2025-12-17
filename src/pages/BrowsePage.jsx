@@ -432,9 +432,12 @@ export default function BrowsePage() {
               */}
 
             {/* Footer: seller */}
-            <p className="mt-3 text-[11px] text-gray-400">
-              Seller: {item.userName || "Unknown"}
-            </p>
+            <div className="mt-3 flex items-center gap-1.5 text-[11px]">
+              <span className="text-gray-400">Seller: {item.userName || "Unknown"}</span>
+              <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[10px] font-medium bg-blue-100 text-blue-800 border border-blue-200">
+                ✓
+              </span>
+            </div>
 
             {/* Campus location */}
             {item.campus && (

@@ -240,9 +240,14 @@ export default function MessagesPage() {
                           </span>
                         )}
                       </div>
-                      <p className="text-sm text-gray-500">
-                        With {otherName || "Student"}
-                      </p>
+                      <div className="flex items-center gap-2">
+                        <p className="text-sm text-gray-500">
+                          With {otherName || "Student"}
+                        </p>
+                        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200">
+                          ✓
+                        </span>
+                      </div>
                       {conv.lastMessage && (
                         <p className="text-xs text-gray-400 mt-1 line-clamp-1">
                           {conv.lastMessage}
@@ -281,9 +286,12 @@ export default function MessagesPage() {
               <p className="text-sm font-semibold text-gray-900">
                 {currentConversation?.itemTitle || "Conversation"}
               </p>
-              <p className="text-xs text-gray-500">
-                Chat with {getOtherName(currentConversation)}
-              </p>
+              <div className="flex items-center gap-2 text-xs text-gray-500">
+                <span>Chat with {getOtherName(currentConversation)}</span>
+                <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 border border-blue-200">
+                  ✓
+                </span>
+              </div>
             </div>
             
             {currentConversation?.itemCampus && (
