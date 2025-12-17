@@ -1,6 +1,6 @@
-# 🎓 SUNYswap
+# 🎓 CUNYswap
 
-**A campus marketplace platform for SUNY students to buy, sell, and exchange items within their university community.**
+**A campus marketplace platform for CUNY students to buy, sell, and exchange items within their university community.**
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-18.3.1-61DAFB?logo=react" alt="React">
@@ -28,11 +28,11 @@
 
 ## 🎯 About
 
-SUNYswap is a secure, student-focused marketplace designed specifically for the SUNY (State University of New York) community. It provides a trusted platform where students can list items for sale, browse available products, communicate with sellers, and build a safer campus trading environment.
+CUNYswap is a secure, student-focused marketplace designed specifically for the SUNY (City University of New York) community. It provides a trusted platform where students can list items for sale, browse available products, communicate with sellers, and build a safer campus trading environment.
 
-### Why SUNYswap?
+### Why CUNYswap?
 
-- **Campus-Specific**: Restricted to verified SUNY student emails
+- **Campus-Specific**: Restricted to verified CUNY student emails
 - **Safe & Secure**: Built-in reporting system and Firebase authentication
 - **Easy to Use**: Intuitive interface with real-time updates
 - **Community-Driven**: Designed by students, for students
@@ -129,8 +129,8 @@ SUNYswap is a secure, student-focused marketplace designed specifically for the 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/Cyrila7/SunySwap.git
-   cd SUNYswap
+   git clone https://github.com/Cyrila7/CUNYswap.git
+   cd CUNYswap
    ```
 
 2. **Install dependencies**
@@ -189,7 +189,7 @@ SUNYswap is a secure, student-focused marketplace designed specifically for the 
 ## 📁 Project Structure
 
 ```
-SUNYswap/
+CUNYswap/
 ├── public/                       # Static assets
 │   ├── index.html                # Test page for email system
 │   └── test-verification.html    # Verification test interface
@@ -213,7 +213,7 @@ SUNYswap/
 │   │   ├── notifications.js      # Email notification functions
 │   │   └── notifications-example.js  # Example notification setup
 │   ├── pages/                    # Page components
-│   │   ├── AboutPage.jsx         # About SUNYswap page
+│   │   ├── AboutPage.jsx         # About CUNYswap page
 │   │   ├── BrowsePage.jsx        # Browse all listings with filters
 │   │   ├── FaqPage.jsx           # FAQ page
 │   │   ├── HomePage.jsx          # Landing page
@@ -326,13 +326,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Cyril Annoh**
 - GitHub: [@Cyrila7](https://github.com/Cyrila7)
-- Repository: [SUNYswap](https://github.com/Cyrila7/SunySwap)
+- Repository: [CUNYswap](https://github.com/Cyrila7/CUNYswap)
 
 ---
 
 ## 🙏 Acknowledgments
 
-- SUNY student community for inspiration and feedback
+- CUNY student community for inspiration and feedback
 - Firebase for backend infrastructure and real-time database
 - Gmail & Resend for fast, reliable email delivery services
 - React and Vite teams for excellent development tools
@@ -353,4 +353,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-<p align="center">Made with ❤️ for the SUNY community</p>
+<p align="center">Made with ❤️ for the CUNY community</p>
