@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SUNYswap - Email Verification Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%);
+      min-height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #ec4899;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #374151;
+      margin-top: 30px;
+      margin-bottom: 15px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 2px solid #e5e7eb;
+      border-radius: 8px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    input:focus {
+      outline: none;
+      border-color: #ec4899;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      background: linear-gradient(to right, #ec4899, #a855f7);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    button:hover {
+      transform: translateY(-2px);
+    }
+    button:active {
+      transform: translateY(0);
+    }
+    #msg {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      font-weight: 500;
+    }
+    .success {
+      background: #d1fae5;
+      color: #065f46;
+      border: 1px solid #6ee7b7;
+    }
+    .error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+    }
+    .info {
+      background: #dbeafe;
+      color: #1e40af;
+      border: 1px solid #93c5fd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 SUNYswap Email Verification</h1>
+
+    <h2>Step 1: Register</h2>
+    <input id="email" type="email" placeholder="your@buffalostate.edu">
+    <input id="password" type="password" placeholder="password">
+    <button onclick="register()">Register & Send Code</button>
+
+    <h2>Step 2: Verify Code</h2>
+    <input id="code" type="text" placeholder="6-digit code" maxlength="6">
+    <button onclick="verify()">Verify Email</button>
+
+    <p id="msg"></p>
+  </div>
+
+<script>
+async function register() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+  const msgEl = document.getElementById("msg");
+
+  if (!email || !password) {
+    msgEl.className = "error";
+    msgEl.innerText = "Please enter both email and password";
+    return;
+  }
+
+  msgEl.className = "info";
+  msgEl.innerText = "Sending verification code...";
+
+  try {
+    const res = await fetch("/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password })
+    });
+
+    const data = await res.json();
+    
+    if (res.ok) {
+      msgEl.className = "success";
+      msgEl.innerText = data.message + " Check your email!";
+    } else {
+      msgEl.className = "error";
+      msgEl.innerText = data.message;
+    }
+  } catch (error) {
+    msgEl.className = "error";
+    msgEl.innerText = "Error: " + error.message;
+  }
+}
+
+async function verify() {
+  const email = document.getElementById("email").value;
+  const code = document.getElementById("code").value;
+  const msgEl = document.getElementById("msg");
+
+  if (!email || !code) {
+    msgEl.className = "error";
+    msgEl.innerText = "Please enter both email and code";
+    return;
+  }
+
+  msgEl.className = "info";
+  msgEl.innerText = "Verifying code...";
+
+  try {
+    const res = await fetch("/verify", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, code })
+    });
+
+    const data = await res.json();
+    
+    if (res.ok) {
+      msgEl.className = "success";
+      msgEl.innerText = "✅ " + data.message;
+    } else {
+      msgEl.className = "error";
+      msgEl.innerText = "❌ " + data.message;
+    }
+  } catch (error) {
+    msgEl.className = "error";
+    msgEl.innerText = "Error: " + error.message;
+  }
+}
+</script>
+
+</body>
+</html>

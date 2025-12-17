@@ -1,0 +1,28 @@
+{
+  "rewrites": [
+    {
+      "source": "/register",
+      "destination": "/api/register"
+    },
+    {
+      "source": "/verify",
+      "destination": "/api/verify"
+    },
+    {
+      "source": "/resend-code",
+      "destination": "/api/resend-code"
+    },
+    {
+      "source": "/notify-message",
+      "destination": "/api/notify-message"
+    },
+    {
+      "source": "/notify-report",
+      "destination": "/api/notify-report"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ]
+}

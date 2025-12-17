@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Background circle -->
+  <circle cx="100" cy="100" r="95" fill="#F5F1E8" stroke="#1F2937" stroke-width="6"/>
+  
+  <!-- Sun rays -->
+  <line x1="100" y1="45" x2="100" y2="30" stroke="#E07A5F" stroke-width="6" stroke-linecap="round"/>
+  <line x1="120" y1="50" x2="128" y2="38" stroke="#E07A5F" stroke-width="6" stroke-linecap="round"/>
+  <line x1="80" y1="50" x2="72" y2="38" stroke="#E07A5F" stroke-width="6" stroke-linecap="round"/>
+  
+  <!-- Sun circle -->
+  <circle cx="100" cy="60" r="18" fill="#E07A5F"/>
+  
+  <!-- Book stack -->
+  <!-- Bottom book (beige) -->
+  <path d="M 50 120 L 150 120 L 150 135 L 50 135 Z" fill="#D4A574" stroke="#1F2937" stroke-width="2"/>
+  <path d="M 50 120 L 55 115 L 155 115 L 150 120 Z" fill="#E8C4A0" stroke="#1F2937" stroke-width="2"/>
+  
+  <!-- Middle book (dark blue) -->
+  <path d="M 55 100 L 145 100 L 145 120 L 55 120 Z" fill="#3D5A6C" stroke="#1F2937" stroke-width="2"/>
+  <path d="M 55 100 L 60 95 L 150 95 L 145 100 Z" fill="#4B6B80" stroke="#1F2937" stroke-width="2"/>
+  
+  <!-- Top book (burnt orange) -->
+  <path d="M 60 85 L 140 85 L 140 100 L 60 100 Z" fill="#C65D3B" stroke="#1F2937" stroke-width="2"/>
+  <path d="M 60 85 L 65 80 L 145 80 L 140 85 Z" fill="#E07A5F" stroke="#1F2937" stroke-width="2"/>
+  
+  <!-- Book details (pages) -->
+  <line x1="145" y1="100" x2="145" y2="120" stroke="#F5F1E8" stroke-width="1"/>
+  <line x1="140" y1="85" x2="140" y2="100" stroke="#F5F1E8" stroke-width="1"/>
+</svg>
