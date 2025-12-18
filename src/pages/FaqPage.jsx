@@ -43,7 +43,7 @@ const faqs = [
       "Alcohol, tobacco, vaping products, or drugs",
       "Weapons or anything that could be used as a weapon",
       "Stolen, fake, or counterfeit items",
-      "University or dorm property (keys, IDs, access cards, furniture that belongs to the school)",
+      "University property (keys, IDs, access cards, furniture that belongs to the school)",
       "Anything illegal or against campus policies",
     ],
     isList: true,

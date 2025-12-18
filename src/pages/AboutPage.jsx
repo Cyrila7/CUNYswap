@@ -48,9 +48,9 @@ export default function AboutPage() {
             because campus communities deserve platforms built for them, not for strangers.
           </p>
           <p className="text-lg text-gray-700 leading-relaxed font-light">
-            Whether you're selling textbooks after finals, searching for affordable dorm essentials, or giving new life to items 
-            you no longer need, <span className="font-semibold text-purple-600">SUNYswap connects you with real students</span> across 
-            the SUNY system.
+            Whether you're selling textbooks after finals, searching for affordable furniture, or giving new life to items 
+            you no longer need, <span className="font-semibold text-purple-600">CUNYswap connects you with real students</span> across 
+            the CUNY system.
           </p>
         </div>
 
@@ -433,7 +433,7 @@ export default function AboutPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-pink-400">•</span>
-                <span>Having no safe way to sell used dorm items</span>
+                <span>Having no safe way to sell used items to fellow students</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-pink-400">•</span>

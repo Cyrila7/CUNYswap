@@ -206,7 +206,6 @@ function SellPageInner() {
               >
                 <option value="">Select category</option>
                 <option value="Electronics">Electronics</option>
-                <option value="Dorm Supplies">Dorm Supplies</option>
                 <option value="Textbooks & School Supplies">Textbooks & School Supplies</option>
                 <option value="Clothing & Shoes">Clothing & Shoes</option>
                 <option value="Beauty & Personal Care">Beauty & Personal Care</option>

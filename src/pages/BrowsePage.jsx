@@ -24,7 +24,6 @@ export default function BrowsePage() {
   const categories = [
     "All",
     "Electronics",
-    "Dorm Supplies",
     "Textbooks & School Supplies",
     "Clothing & Shoes",
     "Beauty & Personal Care",
@@ -162,7 +161,7 @@ export default function BrowsePage() {
         <div className="w-full sm:w-72">
           <input
             type="text"
-            placeholder="Search textbooks, electronics, dorm…"
+            placeholder="Search textbooks, electronics, furniture…"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent"

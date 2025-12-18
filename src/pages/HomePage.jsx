@@ -18,7 +18,6 @@ export default function HomePage() {
   const categories = [
     "All",
     "Electronics",
-    "Dorm Supplies",
     "Textbooks & School Supplies",
     "Clothing & Shoes",
     "Beauty & Personal Care",
@@ -125,12 +124,13 @@ export default function HomePage() {
         <p className="mt-2 text-gray-600 text-center font-medium italic">
           A trusted marketplace for CUNY students.
         </p>
-
+        {/*
         <div className="mt-3 flex justify-center">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold rounded-full bg-purple-100 text-purple-800 border border-purple-200">
-            ✅ Verified CUNY Student Listings
+             ✅ Verified CUNY Student Listings 
           </span>
         </div>
+        */}
 
         <div className="mt-6 bg-white rounded-3xl shadow-lg border border-gray-100 p-4 sm:p-5">
           <form onSubmit={handleSearch} className="flex items-center gap-3">
@@ -155,7 +155,7 @@ export default function HomePage() {
 
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <span className="text-gray-400 mr-1">Quick tags:</span>
-            {["textbooks", "electronics", "clothing", "dorm"].map((tag) => (
+            {["textbooks", "electronics", "clothing", "furniture"].map((tag) => (
               <button
                 key={tag}
                 onClick={() => quickSearch(tag)}
