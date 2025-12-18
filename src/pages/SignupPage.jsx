@@ -12,6 +12,7 @@ export default function SignupPage() {
     confirmPassword: "",
     graduationYear: "",
     schoolYear: "",
+    campus: "",
   });
 
   const [error, setError] = useState("");
@@ -40,6 +41,11 @@ export default function SignupPage() {
       return;
     }
 
+    if (!form.campus) {
+      setError("Please select your CUNY campus.");
+      return;
+    }
+
     setLoading(true);
 
     try {
@@ -49,7 +55,8 @@ export default function SignupPage() {
         form.password, 
         form.name, 
         form.schoolYear, 
-        form.graduationYear
+        form.graduationYear,
+        form.campus
       );
       
       // ✅ Show verification code input
@@ -82,7 +89,8 @@ export default function SignupPage() {
         form.password,
         form.name,
         form.schoolYear,
-        form.graduationYear
+        form.graduationYear,
+        form.campus
       );
       
       // ✅ Verification complete - user is now logged in
@@ -482,33 +490,46 @@ export default function SignupPage() {
                     htmlFor="campus"
                     className="block text-sm font-semibold text-gray-700 mb-2"
                   >
-                    Campus
+                    🎓 CUNY Campus
                   </label>
-                  <div className="relative">
-                    <input
-                      id="campus"
-                      value="CUNY Campus"
-                      disabled
-                      className="block w-full rounded-xl border-2 border-gray-200 bg-gray-50 px-4 py-3 text-base text-gray-700 font-semibold cursor-not-allowed"
-                    />
-                    <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
-                      <svg
-                        className="w-5 h-5 text-gray-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                        />
-                      </svg>
-                    </div>
-                  </div>
+                  <select
+                    id="campus"
+                    name="campus"
+                    value={form.campus}
+                    onChange={onChange}
+                    required
+                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-700 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-50 transition-all duration-200 bg-white appearance-none"
+                    style={{
+                      backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
+                      backgroundPosition: 'right 0.75rem center',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundSize: '1.5em 1.5em',
+                      paddingRight: '2.5rem'
+                    }}
+                  >
+                    <option value="">Select your CUNY campus</option>
+                    <option value="Baruch College">Baruch College</option>
+                    <option value="Brooklyn College">Brooklyn College</option>
+                    <option value="City College">City College of New York (CCNY)</option>
+                    <option value="Hunter College">Hunter College</option>
+                    <option value="John Jay College">John Jay College of Criminal Justice</option>
+                    <option value="Queens College">Queens College</option>
+                    <option value="College of Staten Island">College of Staten Island</option>
+                    <option value="Lehman College">Lehman College</option>
+                    <option value="Medgar Evers College">Medgar Evers College</option>
+                    <option value="York College">York College</option>
+                    <option value="Bronx Community College">Bronx Community College</option>
+                    <option value="Hostos Community College">Hostos Community College</option>
+                    <option value="Borough of Manhattan CC">Borough of Manhattan Community College</option>
+                    <option value="Kingsborough CC">Kingsborough Community College</option>
+                    <option value="LaGuardia CC">LaGuardia Community College</option>
+                    <option value="Queensborough CC">Queensborough Community College</option>
+                    <option value="Guttman Community College">Guttman Community College</option>
+                    <option value="Macaulay Honors College">Macaulay Honors College</option>
+                    <option value="CUNY Graduate Center">CUNY Graduate Center</option>
+                  </select>
                   <p className="mt-1.5 text-xs text-gray-500">
-                    Currently available for CUNY students only
+                    Select your campus for safety and verification purposes
                   </p>
                 </div>
 

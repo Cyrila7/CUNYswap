@@ -102,7 +102,7 @@ export function AuthProvider({ children }) {
     return sendPasswordResetEmail(auth, email, actionCodeSettings);
   };
 
-  const signup = async (email, password, displayName, schoolYear, graduationYear) => {
+  const signup = async (email, password, displayName, schoolYear, graduationYear, campus) => {
   const lowerEmail = (email || "").toLowerCase();
   if (!lowerEmail.endsWith(`@${ALLOWED_DOMAIN}`)) {
     throw new Error(`Please use a @${ALLOWED_DOMAIN} email address.`);
@@ -143,7 +143,7 @@ export function AuthProvider({ children }) {
 };
 
 // ✅ New function to verify the 6-digit code
-const verifyCode = async (email, code, password, displayName, schoolYear, graduationYear) => {
+const verifyCode = async (email, code, password, displayName, schoolYear, graduationYear, campus) => {
   const lowerEmail = (email || "").toLowerCase();
   
   try {
@@ -180,6 +180,7 @@ const verifyCode = async (email, code, password, displayName, schoolYear, gradua
       displayName: displayName || null,
       schoolYear: schoolYear || "",
       graduationYear: graduationYear || "",
+      campus: campus || "",
       emailVerified: true, // ✅ Already verified via code
       createdAt: serverTimestamp(),
     });
