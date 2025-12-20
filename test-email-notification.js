@@ -37,7 +37,7 @@ async function testEmailNotification() {
       console.log('✅ SUCCESS! Email notification sent!');
       console.log('📧 Check your inbox:', TEST_CONFIG.recipientEmail);
       console.log('\n💡 Look for an email with subject:');
-      console.log(`   "💬 New message from ${TEST_CONFIG.senderName} on SUNYswap"`);
+      console.log(`   "💬 New message from ${TEST_CONFIG.senderName} on CUNYswap"`);
       console.log('\n✨ If you received it, your email system is working perfectly!');
     } else {
       console.error('❌ FAILED to send notification');

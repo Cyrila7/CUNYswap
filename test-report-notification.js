@@ -38,7 +38,7 @@ async function testReportNotification() {
 
     if (response.ok) {
       console.log('\n✅ SUCCESS! Report notification sent!');
-      console.log('📧 Check sunyswap@gmail.com for the email');
+      console.log('📧 Check cunyswap@gmail.com for the email');
       console.log('\nResponse:', data);
     } else {
       console.error('\n❌ FAILED!');

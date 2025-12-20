@@ -20,9 +20,9 @@ export default async function handler(req, res) {
   try {
     // Send email using Resend
     await resend.emails.send({
-      from: 'SUNYswap <noreply@sunyswap.app>',
+      from: 'CUNYswap <noreply@cunyswap.app>',
       to: email,
-      subject: '🔑 Verify your SUNYswap email',
+      subject: '🔑 Verify your CUNYswap email',
       html: `
         <!DOCTYPE html>
         <html>
@@ -37,10 +37,10 @@ export default async function handler(req, res) {
         </head>
         <body>
           <div class="container">
-            <div class="logo">🎓 SUNYswap</div>
-            <h2 style="color: #111827;">Welcome to SUNYswap!</h2>
+            <div class="logo">🎓 CUNYswap</div>
+            <h2 style="color: #111827;">Welcome to CUNYswap!</h2>
             <p style="color: #4b5563; line-height: 1.6;">
-              Thanks for signing up! Click the button below to verify your Buffalo State email and start trading with students.
+              Thanks for signing up! Click the button below to verify your CUNY email and start trading with students.
             </p>
             <div style="text-align: center;">
               <a href="${verificationUrl}" class="button">
@@ -51,7 +51,7 @@ export default async function handler(req, res) {
               This link expires in 24 hours. If you didn't create an account, you can safely ignore this email.
             </p>
             <div class="footer">
-              <p>SUNYswap - Buffalo State University Marketplace</p>
+              <p>CUNYswap - CUNY Marketplace</p>
             </div>
           </div>
         </body>

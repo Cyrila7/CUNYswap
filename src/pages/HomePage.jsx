@@ -115,7 +115,7 @@ export default function HomePage() {
   });
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10 bg-gray-50">
+    <div className="max-w-6xl mx-auto px-4 py-10">
       <section>
         <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent text-center font-serif drop-shadow-sm">
           Campus Marketplace

@@ -27,7 +27,9 @@ const bannedWords = [
   "fuck", "shit", "bitch", "asshole", "damn", "hell",
   "bastard", "dick", "pussy", "cock", "cunt", "whore",
   "slut", "motherfucker", "fck", "f*ck", "sh*t", "b*tch", "a55hole",
-  "hoe" , "h*e"
+  "hoe" , "h*e", "sprayed", "squirting", "orgasm", "orgasms",
+  "threesome", "bdsm", "bondage", "dominatrix", "domination",
+  "submissive", "sub", "fetish", "kinky", "kink",
 ];
 
 function containsBannedWords(text) {

@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import RequireAuth from "./components/RequireAuth";
+import StatsDashboard from "./components/StatsDashboard";
+import DebugDashboard from "./components/DebugDashboard";
 
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
@@ -33,6 +35,8 @@ function App() {
         <Route path="/item/:id" element={<ItemDetailPage />} />
         {/* <Route path="/about" element={<AboutPage />} /> */}
         <Route path="/faq" element={<FaqPage />} />
+        <Route path="/stats" element={<StatsDashboard />} />
+        <Route path="/debug" element={<DebugDashboard />} />
 
         {/* Protected routes - require login */}
         <Route path="/sell" element={<RequireAuth><SellPage /></RequireAuth>} />

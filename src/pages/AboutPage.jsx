@@ -20,10 +20,10 @@ export default function AboutPage() {
           }`}
         >
           <div className="inline-flex items-center justify-center h-20 w-20 rounded-3xl bg-gradient-to-tr from-pink-500 to-purple-500 mb-6 shadow-2xl animate-pulse">
-            <span className="text-white text-4xl font-bold">S</span>
+            <span className="text-white text-4xl font-bold">C</span>
           </div>
           <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight">
-            About SUNY<span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">swap</span>
+            About CUNY<span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">swap</span>
           </h1>
           <p className="text-2xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
             A trusted campus marketplace built by students, for students.
@@ -43,8 +43,8 @@ export default function AboutPage() {
             <span className="font-serif">Our Mission</span>
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-4 font-light">
-            SUNYswap exists to create a <span className="font-semibold text-pink-600">safe, simple, and community-driven</span> marketplace 
-            exclusively for SUNY students. We believe buying and selling on campus should be easier, faster, and free from scams — 
+            CUNYswap exists to create a <span className="font-semibold text-pink-600">safe, simple, and community-driven</span> marketplace 
+            exclusively for CUNY students. We believe buying and selling on campus should be easier, faster, and free from scams — 
             because campus communities deserve platforms built for them, not for strangers.
           </p>
           <p className="text-lg text-gray-700 leading-relaxed font-light">
@@ -54,7 +54,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Why SUNYswap Section */}
+        {/* Why CUNYswap Section */}
         <div 
           className={`bg-white rounded-3xl shadow-xl p-10 mb-10 hover:shadow-2xl transition-all duration-500 transform ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
@@ -63,7 +63,7 @@ export default function AboutPage() {
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3">
             <span className="text-4xl">✨</span>
-            <span className="font-serif">Why Choose SUNYswap?</span>
+            <span className="font-serif">Why Choose CUNYswap?</span>
           </h2>
           <div className="grid sm:grid-cols-2 gap-8">
             <div className="flex gap-4 group hover:scale-105 transition-transform duration-300">
@@ -75,7 +75,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Campus-Exclusive Community</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Only verified SUNY student emails are allowed — meaning every shopper is a real student.
+                  Only verified CUNY student emails are allowed — meaning every shopper is a real student.
                 </p>
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function AboutPage() {
                 1
               </div>
               <div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">Sign Up with Your SUNY Email</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Sign Up with Your CUNY Email</h3>
                 <p className="text-gray-600 leading-relaxed">
                   Create your account using your valid student email. Verify it, and your account is ready.
                 </p>
@@ -170,7 +170,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Message the Seller</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Use SUNYswap's built-in chat to negotiate, ask questions, and coordinate.
+                  Use CUNYswap's built-in chat to negotiate, ask questions, and coordinate.
                 </p>
               </div>
             </div>
@@ -198,10 +198,10 @@ export default function AboutPage() {
         >
           <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
             <span className="text-4xl">👥</span>
-            <span className="font-serif">Who Can Use SUNYswap?</span>
+            <span className="font-serif">Who Can Use CUNYswap?</span>
           </h2>
           <p className="text-lg leading-relaxed mb-6 font-light">
-            SUNYswap is exclusively available to students across all SUNY campuses including:
+            CUNYswap is exclusively available to students across all CUNY campuses including:
           </p>
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mb-6">
             <p className="text-lg font-medium text-center leading-relaxed">
@@ -209,7 +209,7 @@ export default function AboutPage() {
             </p>
           </div>
           <p className="text-lg leading-relaxed font-light">
-            If you're enrolled in the <span className="font-bold">SUNY system</span>, SUNYswap is built for you.
+            If you're enrolled in the <span className="font-bold">CUNY system</span>, CUNYswap is built for you.
           </p>
         </div>
 
@@ -225,7 +225,7 @@ export default function AboutPage() {
             <span className="font-serif">Safety & Trust</span>
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-6 font-light">
-            SUNYswap prioritizes safety at every step:
+            CUNYswap prioritizes safety at every step:
           </p>
           <ul className="space-y-4 text-gray-700">
             <li className="flex items-start gap-3 group hover:translate-x-1 transition-transform">
@@ -277,7 +277,7 @@ export default function AboutPage() {
           <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 space-y-3">
             <p className="text-lg flex items-start gap-3">
               <span className="text-2xl">•</span>
-              <span>A marketplace for all <strong>350,000+ SUNY students</strong></span>
+              <span>A marketplace for all <strong>350,000+ CUNY students</strong></span>
             </p>
             <p className="text-lg flex items-start gap-3">
               <span className="text-2xl">•</span>
@@ -293,11 +293,11 @@ export default function AboutPage() {
             </p>
             <p className="text-lg flex items-start gap-3">
               <span className="text-2xl">•</span>
-              <span>A safe, verified ecosystem that scales beyond SUNY</span>
+              <span>A safe, verified ecosystem that scales beyond CUNY</span>
             </p>
           </div>
           <p className="text-xl leading-relaxed mt-6 font-semibold text-center">
-            SUNYswap isn't just a marketplace — it's a campus economy.
+            CUNYswap isn't just a marketplace — it's a campus economy.
           </p>
         </div>
 
@@ -385,7 +385,7 @@ export default function AboutPage() {
               <div className="absolute -left-3 top-0 h-6 w-6 rounded-full bg-blue-500 shadow-lg"></div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Phase 3 — Expansion</h3>
               <ul className="text-gray-600 space-y-1">
-                <li>• SUNY-wide marketplace view</li>
+                <li>• CUNY-wide marketplace view</li>
                 <li>• Student-to-student rental system</li>
                 <li>• Buy-back programs</li>
                 <li>• Optional ID verification</li>
@@ -402,7 +402,7 @@ export default function AboutPage() {
             </div>
           </div>
           <p className="text-gray-700 font-semibold mt-8 text-center text-lg">
-            SUNYswap will grow with the students who use it.
+            CUNYswap will grow with the students who use it.
           </p>
         </div>
 
@@ -419,7 +419,7 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-4 text-lg leading-relaxed font-light">
             <p>
-              SUNYswap was created by <span className="font-bold text-pink-400">Cyril</span>, a SUNY student who experienced 
+              CUNYswap was created by <span className="font-bold text-pink-400">Cyril</span>, a CUNY student who experienced 
               the same frustrations every student deals with:
             </p>
             <ul className="space-y-2 pl-6">
@@ -442,12 +442,12 @@ export default function AboutPage() {
             </ul>
             <p>
               Instead of dealing with unreliable apps and strangers from Craigslist or FB Marketplace, 
-              Cyril built a platform designed for the real needs of SUNY students — <span className="font-bold">verified, safe, and campus-first</span>.
+              Cyril built a platform designed for the real needs of CUNY students — <span className="font-bold">verified, safe, and campus-first</span>.
             </p>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mt-6">
               <p className="text-xl font-semibold text-center">
-                SUNYswap started as a personal project, but quickly became a mission:<br/>
-                <span className="text-pink-400">to give every SUNY student a trusted marketplace built just for them.</span>
+                CUNYswap started as a personal project, but quickly became a mission:<br/>
+                <span className="text-pink-400">to give every CUNY student a trusted marketplace built just for them.</span>
               </p>
             </div>
           </div>
@@ -462,7 +462,7 @@ export default function AboutPage() {
         >
           <h2 className="text-4xl font-bold mb-4 font-serif">🚀 Ready to Start Trading?</h2>
           <p className="text-xl mb-2 font-light">
-            Join thousands of SUNY students already buying, selling, and swapping across campus.
+            Join thousands of CUNY students already buying, selling, and swapping across campus.
           </p>
           <p className="text-lg text-white/90 mb-8 font-light">
             🎓 It's free, fast, and built for students like you.

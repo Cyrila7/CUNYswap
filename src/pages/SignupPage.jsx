@@ -508,25 +508,25 @@ export default function SignupPage() {
                     }}
                   >
                     <option value="">Select your CUNY campus</option>
-                    <option value="Baruch College">Baruch College</option>
-                    <option value="Brooklyn College">Brooklyn College</option>
-                    <option value="City College">City College of New York (CCNY)</option>
-                    <option value="Hunter College">Hunter College</option>
-                    <option value="John Jay College">John Jay College of Criminal Justice</option>
+                    <option value="John Jay College">John Jay College</option>
                     <option value="Queens College">Queens College</option>
-                    <option value="College of Staten Island">College of Staten Island</option>
                     <option value="Lehman College">Lehman College</option>
-                    <option value="Medgar Evers College">Medgar Evers College</option>
-                    <option value="York College">York College</option>
+                    <option value="Baruch College">Baruch College</option>
+                    <option value="Hunter College">Hunter College</option>
+                    <option value="Brooklyn College">Brooklyn College</option>
+                    <option value="City College">City College</option>
+                    <option value="City Tech">City Tech</option>
+                    <option value="Macaulay Honors College">Macaulay Honors College</option>
+                    <option value="Borough of Manhattan Community College (BMCC)">Borough of Manhattan Community College (BMCC)</option>
                     <option value="Bronx Community College">Bronx Community College</option>
                     <option value="Hostos Community College">Hostos Community College</option>
-                    <option value="Borough of Manhattan CC">Borough of Manhattan Community College</option>
-                    <option value="Kingsborough CC">Kingsborough Community College</option>
-                    <option value="LaGuardia CC">LaGuardia Community College</option>
-                    <option value="Queensborough CC">Queensborough Community College</option>
+                    <option value="LaGuardia Community College">LaGuardia Community College</option>
+                    <option value="Kingsborough Community College">Kingsborough Community College</option>
+                    <option value="Queensborough Community College">Queensborough Community College</option>
                     <option value="Guttman Community College">Guttman Community College</option>
-                    <option value="Macaulay Honors College">Macaulay Honors College</option>
-                    <option value="CUNY Graduate Center">CUNY Graduate Center</option>
+                    <option value="York College">York College</option>
+                    <option value="Medgar Evers College">Medgar Evers College</option>
+                    <option value="College of Staten Island">College of Staten Island</option>
                   </select>
                   <p className="mt-1.5 text-xs text-gray-500">
                     Select your campus for safety and verification purposes
