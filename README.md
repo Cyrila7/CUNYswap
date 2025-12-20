@@ -28,7 +28,7 @@
 
 ## 🎯 About
 
-CUNYswap is a secure, student-focused marketplace designed specifically for the SUNY (City University of New York) community. It provides a trusted platform where students can list items for sale, browse available products, communicate with sellers, and build a safer campus trading environment.
+CUNYswap is a secure, student-focused marketplace designed specifically for the CUNY (City University of New York) community. It provides a trusted platform where students can list items for sale, browse available products, communicate with sellers, and build a safer campus trading environment.
 
 ### Why CUNYswap?
 
