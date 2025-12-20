@@ -1,4 +1,4 @@
-# 🚀 Vercel Deployment Guide for SUNYswap
+# 🚀 Vercel Deployment Guide for CUNYswap
 
 ## ⚙️ Environment Variables to Add in Vercel
 
@@ -16,7 +16,7 @@ VITE_FIREBASE_APP_ID=your_app_id
 
 ### Gmail Configuration (for email verification)
 ```
-GMAIL_USER=sunyswap@gmail.com
+GMAIL_USER=cunyswap@gmail.com
 GMAIL_APP_PASSWORD=your-16-character-app-password
 ```
 
