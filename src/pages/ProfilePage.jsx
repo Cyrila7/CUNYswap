@@ -32,20 +32,14 @@ export default function ProfilePage() {
     fullName: "",
     schoolYear: "",
     graduationYear: "",
+    campus: "",
   });
 
    const [profileData, setProfileData] = useState({
     schoolYear: "",
     graduationYear: "",
+    campus: "",
   });
-
-  // Derive school from email (mainly CUNY)
-  const school = useMemo(() => {
-    if (!user?.email) return " CUNY student";
-    const email = user.email.toLowerCase();
-    if (email.includes("login.cuny.edu")) return "CUNY Campus";
-    return "CUNY campus";
-  }, [user]);
 
    // UPDATED: whenever user changes, sync form values from Auth + Firestore
   // Whenever user changes, get name from Auth and extra fields from Firestore
@@ -67,23 +61,26 @@ export default function ProfilePage() {
         const data = snap.data();
         const schoolYear = data.schoolYear || "";
         const graduationYear = data.graduationYear || "";
+        const campus = data.campus || "";
 
         // what we show on the card
-        setProfileData({ schoolYear, graduationYear });
+        setProfileData({ schoolYear, graduationYear, campus });
 
         // prefill the modal inputs
         setProfileForm((prev) => ({
           ...prev,
           schoolYear,
           graduationYear,
+          campus,
         }));
       } else {
         // no doc yet
-        setProfileData({ schoolYear: "", graduationYear: "" });
+        setProfileData({ schoolYear: "", graduationYear: "", campus: "" });
         setProfileForm((prev) => ({
           ...prev,
           schoolYear: "",
           graduationYear: "",
+          campus: "",
         }));
       }
     } catch (err) {
@@ -191,6 +188,7 @@ export default function ProfilePage() {
           displayName: fullNameTrimmed || null,
           schoolYear: profileForm.schoolYear || "",
           graduationYear: profileForm.graduationYear || "",
+          campus: profileForm.campus || "",
         },
         { merge: true }
       );
@@ -283,10 +281,10 @@ export default function ProfilePage() {
           {/* SCHOOL */}
           <div className="w-full max-w-md text-left mb-4">
             <label className="text-xs text-gray-500 font-semibold">
-              School
+              Campus
             </label>
             <div className="mt-1 px-4 py-2 rounded-xl bg-gray-50 border border-gray-200 text-gray-900">
-              {school}
+              {profileData.campus || "Not provided"}
             </div>
           </div>
 
@@ -490,6 +488,39 @@ export default function ProfilePage() {
                   className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-pink-400 text-sm"
                   placeholder="e.g., 2027"
                 />
+              </div>
+
+              <div>
+                <label className="block text-xs font-semibold text-gray-500 mb-1">
+                  Campus
+                </label>
+                <select
+                  name="campus"
+                  value={profileForm.campus}
+                  onChange={handleChange}
+                  className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-pink-400 text-sm"
+                >
+                  <option value="">Select your campus</option>
+                  <option value="John Jay College">John Jay College</option>
+                  <option value="Queens College">Queens College</option>
+                  <option value="Lehman College">Lehman College</option>
+                  <option value="Baruch College">Baruch College</option>
+                  <option value="Hunter College">Hunter College</option>
+                  <option value="Brooklyn College">Brooklyn College</option>
+                  <option value="City College">City College</option>
+                  <option value="City Tech">City Tech</option>
+                  <option value="Macaulay Honors College">Macaulay Honors College</option>
+                  <option value="Borough of Manhattan Community College (BMCC)">Borough of Manhattan Community College (BMCC)</option>
+                  <option value="Bronx Community College">Bronx Community College</option>
+                  <option value="Hostos Community College">Hostos Community College</option>
+                  <option value="LaGuardia Community College">LaGuardia Community College</option>
+                  <option value="Kingsborough Community College">Kingsborough Community College</option>
+                  <option value="Queensborough Community College">Queensborough Community College</option>
+                  <option value="Guttman Community College">Guttman Community College</option>
+                  <option value="York College">York College</option>
+                  <option value="Medgar Evers College">Medgar Evers College</option>
+                  <option value="College of Staten Island">College of Staten Island</option>
+                </select>
               </div>
 
               <div className="mt-2 flex justify-end gap-3">
