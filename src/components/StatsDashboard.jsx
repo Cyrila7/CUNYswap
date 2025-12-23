@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { db } from '../lib/firebase';
-import { collection, getDocs, query, where, Timestamp } from 'firebase/firestore';
+import { collection, getDocs, query, where, Timestamp, onSnapshot } from 'firebase/firestore';
 
 const StatsDashboard = () => {
   const [stats, setStats] = useState({
@@ -15,6 +15,29 @@ const StatsDashboard = () => {
 
   useEffect(() => {
     fetchStats();
+    
+    // Set up real-time listeners
+    const unsubscribeUsers = onSnapshot(collection(db, 'users'), () => {
+      console.log('🔄 Users collection changed, refreshing stats...');
+      fetchStats();
+    });
+    
+    const unsubscribeItems = onSnapshot(collection(db, 'items'), () => {
+      console.log('🔄 Items collection changed, refreshing stats...');
+      fetchStats();
+    });
+    
+    const unsubscribeConversations = onSnapshot(collection(db, 'conversations'), () => {
+      console.log('🔄 Conversations collection changed, refreshing stats...');
+      fetchStats();
+    });
+    
+    // Cleanup listeners on unmount
+    return () => {
+      unsubscribeUsers();
+      unsubscribeItems();
+      unsubscribeConversations();
+    };
   }, []);
 
   const fetchStats = async () => {
@@ -116,11 +139,20 @@ const StatsDashboard = () => {
             📊 CUNYswap Live Stats
           </h1>
           <p className="text-xl text-gray-600">
-            Real-time platform metrics • Updated just now
+            Real-time platform metrics • Auto-updates live
           </p>
-          <div className="mt-4 inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full">
-            <span className="animate-pulse mr-2">🟢</span>
-            <span className="font-semibold">Live & Active</span>
+          <div className="mt-4 flex items-center justify-center gap-4">
+            <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full">
+              <span className="animate-pulse mr-2">🟢</span>
+              <span className="font-semibold">Live & Active</span>
+            </div>
+            <button
+              onClick={() => fetchStats()}
+              className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition-colors"
+            >
+              <span className="mr-2">🔄</span>
+              <span className="font-semibold">Refresh Now</span>
+            </button>
           </div>
         </div>
 
