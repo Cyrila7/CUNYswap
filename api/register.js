@@ -93,7 +93,13 @@ export default async function handler(req, res) {
     return res.status(200).json({ message: "Verification email sent!" });
 
   } catch (error) {
-    console.error("Email send error:", error);
-    return res.status(500).json({ message: "Error sending email" });
+    console.error("❌ Email send error:", error);
+    console.error("Error details:", error.message);
+    console.error("Error code:", error.code);
+    return res.status(500).json({ 
+      message: "Error sending email",
+      error: error.message,
+      details: `Check if GMAIL_USER (${process.env.GMAIL_USER ? 'set' : 'MISSING'}) and GMAIL_APP_PASSWORD (${process.env.GMAIL_APP_PASSWORD ? 'set' : 'MISSING'}) are configured`
+    });
   }
 }
