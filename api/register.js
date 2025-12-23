@@ -61,6 +61,10 @@ export default async function handler(req, res) {
       }
     });
 
+    console.log('Attempting to send email to:', email);
+    console.log('Gmail user configured:', process.env.GMAIL_USER ? 'Yes' : 'NO - MISSING!');
+    console.log('Gmail password configured:', process.env.GMAIL_APP_PASSWORD ? 'Yes' : 'NO - MISSING!');
+
     // Send email
     await transporter.sendMail({
       from: `"CUNYswap Email Verification" <${process.env.GMAIL_USER}>`,
