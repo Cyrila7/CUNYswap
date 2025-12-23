@@ -114,7 +114,7 @@ export function AuthProvider({ children }) {
   try {
     // 1. Send verification code via API (works locally and on Vercel)
     const apiUrl = import.meta.env.PROD 
-      ? `${window.location.origin}/register`
+      ? `${window.location.origin}/api/register`
       : "http://localhost:3000/register";
     
     const response = await fetch(apiUrl, {
@@ -149,7 +149,7 @@ const verifyCode = async (email, code, password, displayName, schoolYear, gradua
   try {
     // 1. Verify code with API (works locally and on Vercel)
     const apiUrl = import.meta.env.PROD 
-      ? `${window.location.origin}/verify`
+      ? `${window.location.origin}/api/verify`
       : "http://localhost:3000/verify";
     
     const response = await fetch(apiUrl, {
