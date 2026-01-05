@@ -1,3 +1,4 @@
+import crypto from "crypto";
 import { initializeApp, getApps, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 
@@ -14,9 +15,12 @@ if (!getApps().length) {
 
 const db = getFirestore();
 
+const hashCode = (code) => crypto.createHash('sha256').update(code.toString()).digest('hex');
+
 export default async function handler(req, res) {
   // Enable CORS
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  const origin = process.env.APP_ORIGIN || 'http://localhost:5173';
+  res.setHeader('Access-Control-Allow-Origin', origin);
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -50,7 +54,16 @@ export default async function handler(req, res) {
       return res.status(400).json({ message: 'Code expired' });
     }
 
-    if (storedData.code !== code) {
+    // Check attempts
+    if (storedData.attempts >= 5) {
+      return res.status(403).json({ message: 'Too many failed attempts. Please request a new code.' });
+    }
+
+    const codeHash = hashCode(code);
+
+    if (storedData.codeHash !== codeHash) {
+      // Increment attempts
+      await docRef.update({ attempts: (storedData.attempts || 0) + 1 });
       return res.status(400).json({ message: 'Invalid code' });
     }
 

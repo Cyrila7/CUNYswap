@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import crypto from "crypto";
 import { initializeApp, getApps, cert } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 
@@ -15,9 +16,12 @@ if (!getApps().length) {
 
 const db = getFirestore();
 
+const hashCode = (code) => crypto.createHash('sha256').update(code.toString()).digest('hex');
+
 export default async function handler(req, res) {
   // Enable CORS
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  const origin = process.env.APP_ORIGIN || 'http://localhost:5173';
+  res.setHeader('Access-Control-Allow-Origin', origin);
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
@@ -29,10 +33,10 @@ export default async function handler(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { email, password } = req.body;
+  const { email } = req.body;
 
-  if (!email || !password) {
-    return res.status(400).json({ message: 'Email and password required' });
+  if (!email) {
+    return res.status(400).json({ message: 'Email required' });
   }
 
   if (!email.endsWith('@login.cuny.edu')) {
@@ -42,13 +46,14 @@ export default async function handler(req, res) {
   try {
     // Generate 6-digit code
     const code = Math.floor(100000 + Math.random() * 900000).toString();
+    const codeHash = hashCode(code);
     const expires = Date.now() + 10 * 60 * 1000; // 10 minutes
 
     // Store code in Firestore
     await db.collection('verificationCodes').doc(email).set({
-      code,
+      codeHash,
       expires,
-      password,
+      attempts: 0,
       createdAt: Date.now()
     });
 
