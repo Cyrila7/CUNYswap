@@ -59,3 +59,7 @@ TODAYS-PROGRESS.md
 # SQLite Database
 *.db
 users.db
+
+# Resend email files (waiting for CUNY whitelist - using Gmail for now)
+api/send-verification.js
+api/verify-email.js
