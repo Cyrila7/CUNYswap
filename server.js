@@ -4,6 +4,7 @@ import sqlite3 from "sqlite3";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import open from "open";
+import crypto from "crypto";
 
 dotenv.config();
 
@@ -11,9 +12,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(express.static("public"));
 
-// ✅ CORS middleware - Allow requests from React app
+// ✅ CORS middleware - Restrict to app origin
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
+  const origin = process.env.APP_ORIGIN || 'http://localhost:5173';
+  res.header('Access-Control-Allow-Origin', origin);
   res.header('Access-Control-Allow-Headers', 'Content-Type');
   res.header('Access-Control-Allow-Methods', 'POST, OPTIONS');
   if (req.method === 'OPTIONS') {
@@ -37,7 +39,6 @@ db.serialize(() => {
     CREATE TABLE IF NOT EXISTS accounts (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       email TEXT UNIQUE,
-      password TEXT,
       verified INTEGER DEFAULT 0
     )
   `);
@@ -46,8 +47,9 @@ db.serialize(() => {
     CREATE TABLE IF NOT EXISTS tokens (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       email TEXT,
-      code TEXT,
-      expires INTEGER
+      codeHash TEXT,
+      expires INTEGER,
+      attempts INTEGER DEFAULT 0
     )
   `);
 });
@@ -63,27 +65,29 @@ const transporter = nodemailer.createTransport({
 
 // Helper function
 const generateCode = () => Math.floor(100000 + Math.random() * 900000);
+const hashCode = (code) => crypto.createHash('sha256').update(code.toString()).digest('hex');
 
 // Routes
 app.post("/register", (req, res) => {
-  const { email, password } = req.body;
+  const { email } = req.body;
 
   if (!email.endsWith("@gmail.com") && !email.endsWith("@login.cuny.edu")) {
     return res.status(400).json({ message: "Only login.cuny.edu emails allowed." });
   }
 
   db.run(
-    `INSERT OR IGNORE INTO accounts (email, password) VALUES (?, ?)`,
-    [email, password],
+    `INSERT OR IGNORE INTO accounts (email) VALUES (?)`,
+    [email],
     (err) => {
       if (err) return res.status(500).json({ message: "Database error" });
 
       const code = generateCode();
+      const codeHash = hashCode(code);
       const expires = Date.now() + 10 * 60 * 1000; // 10 min
 
       db.run(
-        `INSERT INTO tokens (email, code, expires) VALUES (?, ?, ?)`,
-        [email, code, expires],
+        `INSERT INTO tokens (email, codeHash, expires, attempts) VALUES (?, ?, ?, 0)`,
+        [email, codeHash, expires],
         async (err) => {
           if (err) return res.status(500).json({ message: "Database error" });
 
@@ -126,12 +130,25 @@ app.post("/verify", (req, res) => {
   const { email, code } = req.body;
 
   db.get(
-    `SELECT * FROM tokens WHERE email = ? AND code = ?`,
-    [email, code],
+    `SELECT * FROM tokens WHERE email = ?`,
+    [email],
     (err, tokenRow) => {
       if (err) return res.status(500).json({ message: "Database error" });
       if (!tokenRow) return res.status(400).json({ message: "Invalid code" });
       if (Date.now() > tokenRow.expires) return res.status(400).json({ message: "Code expired" });
+      
+      // Check attempts
+      if (tokenRow.attempts >= 5) {
+        return res.status(403).json({ message: "Too many failed attempts. Please request a new code." });
+      }
+
+      const codeHash = hashCode(code);
+      
+      if (tokenRow.codeHash !== codeHash) {
+        // Increment attempts
+        db.run(`UPDATE tokens SET attempts = attempts + 1 WHERE id = ?`, [tokenRow.id]);
+        return res.status(400).json({ message: "Invalid code" });
+      }
 
       db.run(`UPDATE accounts SET verified = 1 WHERE email = ?`, [email], (err) => {
         if (err) return res.status(500).json({ message: "Database error" });
