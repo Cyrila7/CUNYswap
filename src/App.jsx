@@ -36,7 +36,6 @@ function App() {
         {/* <Route path="/about" element={<AboutPage />} /> */}
         <Route path="/faq" element={<FaqPage />} />
         <Route path="/stats" element={<StatsDashboard />} />
-        <Route path="/debug" element={<DebugDashboard />} />
 
         {/* Protected routes - require login */}
         <Route path="/sell" element={<RequireAuth><SellPage /></RequireAuth>} />
