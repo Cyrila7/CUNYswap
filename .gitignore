@@ -55,6 +55,9 @@ dist-ssr
 
 # Personal progress notes
 TODAYS-PROGRESS.md
+TODAYS-WORK-SUMMARY.md
+PITCHFEST-PREP.md
+VERCEL-DEPLOYMENT.md
 
 # SQLite Database
 *.db
