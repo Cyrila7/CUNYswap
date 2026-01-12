@@ -1,4 +1,4 @@
-# CUNYswap 🛍️ brother to SUNYswap
+# CUNYswap 🛍️
 
 **A campus-only marketplace built by students, for students.**
 
