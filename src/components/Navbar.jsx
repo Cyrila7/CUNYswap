@@ -23,64 +23,67 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-30 bg-white/80 backdrop-blur border-b border-gray-100">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-4">
+    <nav className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+      <div className="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between gap-4">
         {/* LEFT: LOGO */}
-        <Link to="/" className="flex items-center gap-2">
-          <div className="h-8 w-8 rounded-2xl bg-gradient-to-tr from-pink-500 to-purple-500 flex items-center justify-center text-white text-lg font-bold">
+        <Link to="/" className="flex items-center gap-2.5 group">
+          <div className="h-9 w-9 rounded-2xl bg-gradient-to-tr from-pink-500 via-purple-500 to-pink-600 flex items-center justify-center text-white text-lg font-bold shadow-md group-hover:shadow-lg transition-shadow">
             C
           </div>
-          <span className="text-lg font-semibold tracking-tight text-gray-900 sm:text-xl sans font-serif">
+          <span className="text-xl font-bold tracking-tight text-gray-900 font-serif">
             CUNY<span className="text-pink-500">swap</span>
           </span>
         </Link>
 
         {/* CENTER: DESKTOP LINKS */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
-          <Link to="/" className={isActive("/")}>
+          <Link to="/" className={`${isActive("/")} transition-colors`}>
             Home
           </Link>
-          <Link to="/browse" className={isActive("/browse")}>
+          <Link to="/browse" className={`${isActive("/browse")} transition-colors`}>
             Browse
           </Link>
           {/* <Link to="/about" className={isActive("/about")}>
             About
           </Link> */}
-          <Link to="/faq" className={isActive("/faq")}>
+          <Link to="/faq" className={`${isActive("/faq")} transition-colors`}>
             FAQ
           </Link>
         </div>
 
         {/* RIGHT: DESKTOP ACTIONS */}
-        <div className="hidden md:flex items-center gap-4 text-sm font-medium">
+        <div className="hidden md:flex items-center gap-3 text-sm font-medium">
           <button
             onClick={handleSellClick}
-            className="px-4 py-2 rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold shadow-sm hover:shadow-md"
+            className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-pink-600 text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200"
           >
             Sell
           </button>
 
           {user ? (
             <>
-              <Link to="/messages" className="text-gray-700 hover:text-pink-500">
+              <Link to="/messages" className="text-gray-700 hover:text-pink-500 transition-colors">
                 Messages
               </Link>
-              <Link to="/profile" className="text-gray-700 hover:text-pink-500">
+              <Link to="/profile" className="text-gray-700 hover:text-pink-500 transition-colors">
                 Profile
               </Link>
               <button
                 onClick={logout}
-                className="text-xs text-red-500 hover:text-red-600"
+                className="text-xs text-gray-500 hover:text-red-600 transition-colors"
               >
-                Logout ({user.displayName || user.email.split("@")[0]})
+                Logout
               </button>
             </>
           ) : (
             <>
-              <Link to="/login" className="text-gray-700 hover:text-pink-500">
+              <Link to="/login" className="text-gray-700 hover:text-pink-500 transition-colors">
                 Login
               </Link>
-              <Link to="/signup" className="text-pink-500 hover:text-pink-600">
+              <Link 
+                to="/signup" 
+                className="px-4 py-2 rounded-xl bg-gray-100 text-gray-900 hover:bg-gray-200 font-semibold transition-colors"
+              >
                 Signup
               </Link>
             </>
@@ -98,7 +101,7 @@ export default function Navbar() {
 
       {/* MOBILE PANEL */}
       {menuOpen && (
-        <div className="md:hidden border-t border-gray-100 bg-white">
+        <div className="md:hidden border-t border-gray-200 bg-white shadow-lg">
           <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3 text-sm font-medium">
             <Link
               to="/"
@@ -131,7 +134,7 @@ export default function Navbar() {
 
             <button
               onClick={handleSellClick}
-              className="mt-2 w-full px-4 py-2 rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold shadow-sm"
+              className="mt-2 w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-pink-600 text-white font-semibold shadow-md"
             >
               Sell
             </button>
@@ -141,14 +144,14 @@ export default function Navbar() {
                 <Link
                   to="/messages"
                   onClick={() => setMenuOpen(false)}
-                  className="text-gray-700 hover:text-pink-500"
+                  className="text-gray-700 hover:text-pink-500 transition-colors"
                 >
                   Messages
                 </Link>
                 <Link
                   to="/profile"
                   onClick={() => setMenuOpen(false)}
-                  className="text-gray-700 hover:text-pink-500"
+                  className="text-gray-700 hover:text-pink-500 transition-colors"
                 >
                   Profile
                 </Link>
@@ -157,9 +160,9 @@ export default function Navbar() {
                     logout();
                     setMenuOpen(false);
                   }}
-                  className="text-red-500 text-left mt-1"
+                  className="text-gray-500 hover:text-red-600 text-left mt-1 transition-colors"
                 >
-                  Logout ({user.displayName || user.email.split("@")[0]})
+                  Logout
                 </button>
               </>
             ) : (
@@ -167,14 +170,14 @@ export default function Navbar() {
                 <Link
                   to="/login"
                   onClick={() => setMenuOpen(false)}
-                  className="text-gray-700 hover:text-pink-500"
+                  className="text-gray-700 hover:text-pink-500 transition-colors"
                 >
                   Login
                 </Link>
                 <Link
                   to="/signup"
                   onClick={() => setMenuOpen(false)}
-                  className="text-pink-500 hover:text-pink-600"
+                  className="px-4 py-2 rounded-xl bg-gray-100 text-gray-900 hover:bg-gray-200 font-semibold text-center transition-colors"
                 >
                   Signup
                 </Link>

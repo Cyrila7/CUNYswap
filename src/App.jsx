@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import RequireAuth from "./components/RequireAuth";
 import StatsDashboard from "./components/StatsDashboard";
 
@@ -45,6 +46,7 @@ function App() {
         <Route path="/verify-email" element={<VerifyEmailPage />} />
         {/* <Route path="/reset-password" element={<ResetPasswordPage />} /> */}
       </Routes>
+      <Footer />
     </Router>
   );
 }
