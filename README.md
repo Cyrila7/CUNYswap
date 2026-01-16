@@ -1,6 +1,6 @@
 # CUNYswap 🛍️
 
-**A campus-only marketplace built by students, for students.**
+**A student-only campus marketplace designed to enable safe, local peer-to-peer exchanges.**
 
 CUNYswap is a student-led web platform that enables verified college students to buy and sell items safely within their campus community. The goal is to reduce waste, improve safety, and make end-of-semester selling easier by keeping transactions on campus.
 
@@ -41,6 +41,25 @@ Currently piloted with CUNY students and designed to scale across CUNY campuses.
 **Deployment:** Vercel (frontend), Custom Node server (email)
 
 ---
+
+## Architecture Overview
+
+CUNYswap uses a client-heavy architecture optimized for rapid iteration and real-time updates.
+
+- React handles UI rendering, routing, and state management
+- Firebase Authentication enforces student-only access
+- Firestore provides real-time data synchronization for listings and messaging
+- A custom Node.js server handles email verification and notifications
+- Vercel manages frontend deployment and serverless API routes
+
+
+## Design Tradeoffs
+
+- Firebase was chosen for speed of development and real-time features, with the understanding that a relational backend may be needed at larger scale
+- Payments are intentionally excluded to reduce liability and complexity
+- Identity verification is enforced via email rather than manual moderation to keep the system lightweight
+
+
 
 ## 🔐 Security & Trust
 
@@ -135,7 +154,7 @@ CUNYswap/
 
 ## 🤝 Contributing
 
-This project is maintained by a single developer. Feedback and suggestions welcome via issues or pull requests im still a beginner haha.
+This project is maintained by a single developer. Feedback and suggestions welcome via issues or pull requests. 
 
 ---
 
