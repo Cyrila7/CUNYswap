@@ -189,7 +189,7 @@ export default function MessagesPage() {
   // 🔹 MODE 1: /messages → show list of conversations
   if (!conversationId) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-orange-50">
         <div className="max-w-4xl mx-auto px-4 py-6">
           <h1 className="text-2xl font-bold text-gray-900 mb-1">Messages</h1>
           <p className="text-sm text-gray-600 mb-6">Chat with other CUNY students</p>
@@ -277,7 +277,7 @@ export default function MessagesPage() {
 
   // 🔹 MODE 2: /messages/:conversationId → show single chat
   return (
-    <div className="min-h-screen bg-gray-50 px-4 py-6">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-orange-50 px-4 py-6">
       <div className="max-w-4xl mx-auto bg-white rounded-xl border border-gray-200 shadow-sm flex flex-col h-[75vh]">
         {/* Header */}
         <div className="px-4 py-3 border-b border-gray-200 bg-gray-50">
