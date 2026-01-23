@@ -119,51 +119,63 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-orange-50">
-      {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-4 pt-8 pb-6">
-        <div className="text-center mb-6">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white rounded-full shadow-sm border border-gray-200 mb-4">
+      {/* Hero Section - Optimized for Mobile */}
+      <section className="max-w-6xl mx-auto px-4 pt-4 sm:pt-8 pb-3 sm:pb-6">
+        <div className="text-center mb-4 sm:mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white rounded-full shadow-sm border border-gray-200 mb-3 sm:mb-4">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-            <span className="text-sm font-medium text-gray-700">
+            <span className="text-xs sm:text-sm font-medium text-gray-700">
               <span className="font-bold text-[#003f87]">{activeStudentsCount}</span> students active today
             </span>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-[#003f87] font-serif mb-3">
+          <h1 className="text-3xl sm:text-6xl font-extrabold tracking-tight text-[#003f87] font-serif mb-2 sm:mb-3 leading-tight">
             Find deals from students
-            <span className="block mt-2 text-3xl sm:text-4xl bg-gradient-to-r from-[#ff6b35] to-[#003f87] bg-clip-text text-transparent">
+            <span className="block mt-1 sm:mt-2 text-2xl sm:text-4xl bg-gradient-to-r from-[#ff6b35] to-[#003f87] bg-clip-text text-transparent">
               across CUNY campuses
             </span>
           </h1>
 
-          <p className="mt-3 text-gray-600 text-lg font-medium max-w-2xl mx-auto">
+          <p className="mt-2 sm:mt-3 text-gray-600 text-sm sm:text-lg font-medium max-w-2xl mx-auto">
             Buy & sell textbooks, electronics, furniture, and more from verified CUNY students
           </p>
         </div>
 
-        {/* Search Bar */}
-        <div className="mt-6 bg-white rounded-3xl shadow-xl border-2 border-gray-100 p-4 sm:p-6">
-          <form onSubmit={handleSearch} className="flex items-center gap-3">
-            <div className="flex items-center flex-1 bg-gray-50 border-2 border-gray-200 rounded-2xl px-4 py-3 focus-within:border-[#ff6b35] focus-within:ring-4 focus-within:ring-orange-100 transition-all">
-              <span className="text-gray-400 text-2xl mr-3">🔍</span>
-              <input
-                type="text"
-                placeholder="Search textbooks, electronics, furniture…"
-                className="flex-1 bg-transparent outline-none text-base text-gray-800 placeholder:text-gray-400"
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-            </div>
+        {/* Search Bar with Integrated Filters */}
+        <div className="mt-4 sm:mt-6 bg-white rounded-3xl shadow-xl border-2 border-gray-100 p-3 sm:p-6">
+          <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-0">
+            <form onSubmit={handleSearch} className="flex items-center gap-2 sm:gap-3 flex-1">
+              <div className="flex items-center flex-1 bg-gray-50 border-2 border-gray-200 rounded-2xl px-3 sm:px-4 py-2 sm:py-3 focus-within:border-[#ff6b35] focus-within:ring-2 sm:focus-within:ring-4 focus-within:ring-orange-100 transition-all">
+                <span className="text-gray-400 text-xl sm:text-2xl mr-2 sm:mr-3">🔍</span>
+                <input
+                  type="text"
+                  placeholder="Search textbooks, electronics, furniture…"
+                  className="flex-1 bg-transparent outline-none text-sm sm:text-base text-gray-800 placeholder:text-gray-400"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
 
+              <button
+                type="submit"
+                className="hidden sm:inline-flex px-6 py-3 rounded-2xl bg-gradient-to-r from-[#ff6b35] to-[#ff8c5a] hover:from-[#ff5722] hover:to-[#ff6b35] text-white text-base font-bold shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+              >
+                Search
+              </button>
+            </form>
+
+            {/* Filters button - attached to search area */}
             <button
-              type="submit"
-              className="hidden sm:inline-flex px-6 py-3 rounded-2xl bg-gradient-to-r from-[#ff6b35] to-[#ff8c5a] hover:from-[#ff5722] hover:to-[#ff6b35] text-white text-base font-bold shadow-lg hover:shadow-xl transition-all transform hover:scale-105"
+              onClick={() => setShowFilters(!showFilters)}
+              className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-white border-2 border-gray-200 hover:border-[#003f87] hover:bg-blue-50 text-xs sm:text-sm font-bold text-gray-700 shadow-md transition-all shrink-0"
             >
-              Search
+              <span className="text-base sm:text-lg">⚙️</span>
+              <span className="hidden sm:inline">Filters</span>
+              {showFilters ? " ▲" : " ▼"}
             </button>
-          </form>
+          </div>
 
-          <div className="mt-4 flex flex-wrap gap-2 text-sm">
+          <div className="mt-3 sm:mt-4 flex flex-wrap gap-2 text-xs sm:text-sm">
             <span className="text-gray-500 font-medium mr-1">Quick:</span>
             {[
               { label: "📚 Textbooks", term: "textbooks" },
@@ -174,7 +186,7 @@ export default function HomePage() {
               <button
                 key={term}
                 onClick={() => quickSearch(term)}
-                className="px-4 py-2 rounded-full bg-gradient-to-r from-blue-50 to-orange-50 text-[#003f87] hover:from-[#003f87] hover:to-[#ff6b35] hover:text-white font-semibold border border-gray-200 hover:border-transparent transition-all transform hover:scale-105"
+                className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-gradient-to-r from-blue-50 to-orange-50 text-[#003f87] hover:from-[#003f87] hover:to-[#ff6b35] hover:text-white font-semibold border border-gray-200 hover:border-transparent transition-all transform hover:scale-105"
               >
                 {label}
               </button>
@@ -182,25 +194,14 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="mt-5 flex items-center gap-3">
-          <button
-            onClick={() => setShowFilters(!showFilters)}
-            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white border-2 border-gray-200 hover:border-[#003f87] hover:bg-blue-50 text-sm font-bold text-gray-700 shadow-md transition-all"
-          >
-            <span className="text-lg">⚙️</span>
-            Filters
-            {showFilters ? " ▲" : " ▼"}
-          </button>
-
-          {(selectedCategory !== "All" ||
-            minPrice ||
-            maxPrice ||
-            !selectedCampuses.includes("All Campuses")) && (
-            <span className="text-sm text-[#ff6b35] font-bold flex items-center gap-1">
-              <span className="text-lg">✓</span> Filters active
-            </span>
-          )}
-        </div>
+        {(selectedCategory !== "All" ||
+          minPrice ||
+          maxPrice ||
+          !selectedCampuses.includes("All Campuses")) && (
+          <div className="mt-3 text-xs sm:text-sm text-[#ff6b35] font-bold flex items-center gap-1">
+            <span className="text-base sm:text-lg">✓</span> Filters active
+          </div>
+        )}
 
         {showFilters && (
           <div className="mt-4 bg-white rounded-2xl shadow-lg border-2 border-gray-200 p-6 space-y-5">
