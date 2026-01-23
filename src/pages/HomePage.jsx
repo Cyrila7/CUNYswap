@@ -118,7 +118,7 @@ export default function HomePage() {
   const activeStudentsCount = new Set(items.map(i => i.userId)).size;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-orange-50">
       {/* Compact Header - Marketplace Style */}
       <section className="max-w-6xl mx-auto px-4 pt-6 pb-4">
         {/* Tagline */}
