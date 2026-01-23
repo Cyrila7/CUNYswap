@@ -137,13 +137,13 @@ export default function SignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 flex items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50 flex items-center justify-center px-4 py-12">
       <div className="w-full max-w-md">
         {/* Signup Card */}
         <div className="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 sm:p-10">
           {/* Logo/Icon */}
           <div className="flex justify-center mb-6">
-            <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform">
+            <div className="w-16 h-16 bg-gradient-to-br from-[#003f87] to-[#ff6b35] rounded-2xl flex items-center justify-center shadow-lg transform hover:scale-105 transition-transform">
               <svg
                 className="w-9 h-9 text-white"
                 fill="none"
@@ -196,7 +196,7 @@ export default function SignupPage() {
               {/* Go to Browse Button */}
               <Link
                 to="/browse"
-                className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-semibold text-white bg-gradient-to-r from-purple-500 to-pink-600 rounded-xl hover:from-purple-700 hover:to-pink-700 shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02]"
+                className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-semibold text-white bg-gradient-to-r from-[#003f87] to-[#ff6b35] rounded-xl hover:from-[#002a5c] hover:to-[#e55a20] shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-[1.02]"
               >
                 Start Browsing Items
               </Link>
@@ -206,7 +206,7 @@ export default function SignupPage() {
             <div>
               <div className="mb-8 text-center">
                 <div className="inline-block mb-3">
-                  <span className="text-xs font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600 uppercase">
+                  <span className="text-xs font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-[#003f87] to-[#ff6b35] uppercase">
                     CUNYswap
                   </span>
                 </div>
@@ -236,7 +236,7 @@ export default function SignupPage() {
                     onChange={(e) => setVerificationCode(e.target.value)}
                     maxLength={6}
                     required
-                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-center text-2xl font-bold text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-50 transition-all duration-200 hover:border-gray-300 tracking-widest"
+                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-center text-2xl font-bold text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#ff6b35] focus:ring-4 focus:ring-orange-50 transition-all duration-200 hover:border-gray-300 tracking-widest"
                   />
                   <p className="mt-2 text-xs text-gray-500 text-center">
                     📧 Check your inbox and spam folder. The code expires in 10 minutes.
@@ -267,7 +267,7 @@ export default function SignupPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-xl hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-md focus:outline-none focus:ring-4 focus:ring-purple-200 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] text-base"
+                  className="w-full bg-gradient-to-r from-[#003f87] to-[#ff6b35] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-xl hover:from-[#002a5c] hover:to-[#e55a20] disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-md focus:outline-none focus:ring-4 focus:ring-orange-200 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] text-base"
                 >
                   {loading ? (
                     <span className="flex items-center justify-center">
@@ -303,7 +303,7 @@ export default function SignupPage() {
                     type="button"
                     onClick={onResendCode}
                     disabled={resendLoading}
-                    className="text-sm text-pink-600 hover:text-blue-800 font-medium underline disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="text-sm text-[#ff6b35] hover:text-[#003f87] font-medium underline disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {resendLoading ? "Sending..." : "Didn't receive the code? Resend"}
                   </button>
@@ -328,7 +328,7 @@ export default function SignupPage() {
               {/* SIGNUP FORM VIEW - Show this before signup */}
               <div className="mb-8 text-center">
                 <div className="inline-block mb-3">
-                  <span className="text-xs font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-pink-600 uppercase">
+                  <span className="text-xs font-bold tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-[#003f87] to-[#ff6b35] uppercase">
                     CUNYswap
                   </span>
                 </div>
@@ -359,7 +359,7 @@ export default function SignupPage() {
                     onChange={onChange}
                     autoComplete="name"
                     required
-                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-50 transition-all duration-200 hover:border-gray-300"
+                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#ff6b35] focus:ring-4 focus:ring-orange-50 transition-all duration-200 hover:border-gray-300"
                   />
                 </div>
 
@@ -380,7 +380,7 @@ export default function SignupPage() {
                     onChange={onChange}
                     autoComplete="email"
                     required
-                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-50 transition-all duration-200 hover:border-gray-300"
+                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#ff6b35] focus:ring-4 focus:ring-orange-50 transition-all duration-200 hover:border-gray-300"
                   />
                   <p className="mt-1.5 text-xs text-gray-500 flex items-center">
                     <svg
@@ -417,7 +417,7 @@ export default function SignupPage() {
                     onChange={onChange}
                     autoComplete="graduation-year"
                     required
-                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-50 transition-all duration-200 hover:border-gray-300"
+                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#ff6b35] focus:ring-4 focus:ring-orange-50 transition-all duration-200 hover:border-gray-300"
                   />
                 </div>
 
@@ -438,7 +438,7 @@ export default function SignupPage() {
                     onChange={onChange}
                     autoComplete="school-year"
                     required
-                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-50 transition-all duration-200 hover:border-gray-300"
+                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#ff6b35] focus:ring-4 focus:ring-orange-50 transition-all duration-200 hover:border-gray-300"
                   />
                 </div>
 
@@ -459,7 +459,7 @@ export default function SignupPage() {
                     onChange={onChange}
                     autoComplete="new-password"
                     required
-                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-50 transition-all duration-200 hover:border-gray-300"
+                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#ff6b35] focus:ring-4 focus:ring-orange-50 transition-all duration-200 hover:border-gray-300"
                   />
                 </div>
 
@@ -480,7 +480,7 @@ export default function SignupPage() {
                     onChange={onChange}
                     autoComplete="new-password"
                     required
-                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-50 transition-all duration-200 hover:border-gray-300"
+                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-[#ff6b35] focus:ring-4 focus:ring-orange-50 transition-all duration-200 hover:border-gray-300"
                   />
                 </div>
 
@@ -498,7 +498,7 @@ export default function SignupPage() {
                     value={form.campus}
                     onChange={onChange}
                     required
-                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-700 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-50 transition-all duration-200 bg-white appearance-none"
+                    className="block w-full rounded-xl border-2 border-gray-200 px-4 py-3 text-base text-gray-700 focus:outline-none focus:border-[#ff6b35] focus:ring-4 focus:ring-orange-50 transition-all duration-200 bg-white appearance-none"
                     style={{
                       backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                       backgroundPosition: 'right 0.75rem center',
@@ -557,7 +557,7 @@ export default function SignupPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full bg-gradient-to-r from-purple-500 to-pink-600 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-xl hover:from-purple-700 hover:to-pink-700 disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-md focus:outline-none focus:ring-4 focus:ring-purple-200 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] text-base"
+                  className="w-full bg-gradient-to-r from-[#003f87] to-[#ff6b35] text-white font-bold py-3.5 px-6 rounded-xl shadow-lg hover:shadow-xl hover:from-[#002a5c] hover:to-[#e55a20] disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-md focus:outline-none focus:ring-4 focus:ring-orange-200 transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] text-base"
                 >
                   {loading ? (
                     <span className="flex items-center justify-center">
@@ -611,7 +611,7 @@ export default function SignupPage() {
               <div className="text-center">
                 <Link
                   to="/login"
-                  className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-semibold text-purple-600 bg-purple-50 rounded-xl hover:bg-purple-100 focus:outline-none focus:ring-4 focus:ring-purple-100 transition-all duration-200"
+                  className="inline-flex items-center justify-center w-full px-6 py-3 text-base font-semibold text-[#003f87] bg-blue-50 rounded-xl hover:bg-blue-100 focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all duration-200"
                 >
                   Sign in to existing account
                 </Link>

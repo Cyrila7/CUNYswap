@@ -241,202 +241,212 @@ export default function ProfilePage() {
 
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50 px-4 py-10">
-      <div className="max-w-4xl mx-auto space-y-8">
-        {/* PROFILE CARD */}
-        <section className="bg-white rounded-3xl shadow-md border border-gray-100 p-8 flex flex-col items-center text-center">
-          {/* Avatar at top */}
-          <div className="h-20 w-20 rounded-3xl bg-gradient-to-tr from-pink-500 to-purple-500 flex items-center justify-center text-white text-3xl font-bold mb-4">
-            {(user.displayName || user.email || "?")
-              .trim()
-              .charAt(0)
-              .toUpperCase()}
-          </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50 px-4 py-8">
+      <div className="max-w-5xl mx-auto space-y-6">
+        
+        {/* Header with greeting */}
+        <div className="text-center mb-8">
+          <h1 className="text-4xl font-black text-[#003f87] mb-2">
+            Hey, {user.displayName?.split(' ')[0] || 'Student'}! 👋
+          </h1>
+          <p className="text-gray-600">Welcome to your campus marketplace hub</p>
+        </div>
 
-          {/* Verified Badge */}
-          <div className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-green-100 text-green-800 border-2 border-green-200 shadow-sm">
-              ✓ Verified CUNY Student
-            </span>
-          </div>
-
-          {/* FULL NAME */}
-          <div className="w-full max-w-md text-left mb-4">
-            <label className="text-xs text-gray-500 font-semibold">
-              Full Name
-            </label>
-            <div className="mt-1 px-4 py-2 w-full rounded-xl bg-gray-50 border border-gray-200 text-gray-900">
-              {user.displayName || "Not provided"}
+        {/* PROFILE CARD - More compact and student-friendly */}
+        <section className="bg-white rounded-2xl shadow-lg border-2 border-[#003f87]/10 overflow-hidden">
+          {/* Header with gradient */}
+          <div className="bg-gradient-to-r from-[#003f87] to-[#ff6b35] px-6 py-8 text-white relative overflow-hidden">
+            <div className="absolute top-0 right-0 opacity-10">
+              <div className="text-9xl">🎓</div>
+            </div>
+            <div className="relative flex items-center gap-6">
+              {/* Avatar */}
+              <div className="h-24 w-24 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center text-white text-4xl font-black shadow-xl ring-4 ring-white/30">
+                {(user.displayName || user.email || "?")
+                  .trim()
+                  .charAt(0)
+                  .toUpperCase()}
+              </div>
+              
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold mb-1">{user.displayName || "CUNY Student"}</h2>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-green-400/90 text-green-900">
+                    ✓ Verified
+                  </span>
+                  {profileData.campus && (
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-white/20 backdrop-blur-sm">
+                      📍 {profileData.campus}
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm text-white/80">{user.email}</p>
+              </div>
             </div>
           </div>
 
-          {/* EMAIL */}
-          <div className="w-full max-w-md text-left mb-4">
-            <label className="text-xs text-gray-500 font-semibold">Email</label>
-            <div className="mt-1 px-4 py-2 rounded-xl bg-gray-50 border border-gray-200 break-all text-gray-900">
-              {user.email}
-            </div>
-          </div>
+          {/* Profile Info Grid */}
+          <div className="p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+              {/* School Year */}
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-4 border border-blue-200">
+                <div className="text-xs font-bold text-blue-600 mb-1">YEAR</div>
+                <div className="text-lg font-bold text-gray-900">
+                  {profileData.schoolYear || "Not set"}
+                </div>
+              </div>
 
-          {/* SCHOOL */}
-          <div className="w-full max-w-md text-left mb-4">
-            <label className="text-xs text-gray-500 font-semibold">
-              Campus
-            </label>
-            <div className="mt-1 px-4 py-2 rounded-xl bg-gray-50 border border-gray-200 text-gray-900">
-              {profileData.campus || "Not provided"}
-            </div>
-          </div>
+              {/* Graduation Year */}
+              <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-4 border border-orange-200">
+                <div className="text-xs font-bold text-orange-600 mb-1">GRADUATING</div>
+                <div className="text-lg font-bold text-gray-900">
+                  {profileData.graduationYear || "Not set"}
+                </div>
+              </div>
 
-          {/* SCHOOL YEAR */}
-          <div className="w-full max-w-md text-left mb-4">
-            <label className="text-xs text-gray-500 font-semibold">
-              School Year
-            </label>
-            <div className="mt-1 px-4 py-2 rounded-xl bg-gray-50 border border-gray-200 text-gray-900">
-              {profileData.schoolYear || "Not provided"}
-            </div>
-          </div>
-
-          {/* Graduation Year */}
-          <div className="w-full max-w-md text-left mb-4">
-            <label className="text-xs text-gray-500 font-semibold">
-              Graduation Year
-            </label>
-            <div className="mt-1 px-4 py-2 rounded-xl bg-gray-50 border border-gray-200 text-gray-900">
-              {profileData.graduationYear || "Not provided"}
-            </div>
-          </div>
-
-          {/* USER ID 
-          <div className="w-full max-w-md text-left mb-4">
-            <label className="text-xs text-gray-500 font-semibold">
-              User ID
-            </label>
-            <div className="mt-1 px-4 py-2 rounded-xl bg-gray-50 border border-gray-200 break-all text-gray-900">
-              {user.uid}
-            </div>
-          </div>
-          */} {/*//not needed for profile its for admins only*/}
-
-          {/* Stats */}
-          <div className="mt-6 flex flex-col items-center gap-3">
-            <div className="flex gap-4">
-              <div className="px-4 py-2 rounded-xl bg-gray-50 border border-gray-100 text-center">
-                <p className="text-xs text-gray-500">Active listings</p>
-                <p className="text-lg font-semibold text-gray-900">
-                  {items.length}
-                </p>
+              {/* Active Listings */}
+              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-xl p-4 border border-green-200">
+                <div className="text-xs font-bold text-green-600 mb-1">LISTINGS</div>
+                <div className="text-lg font-bold text-gray-900">
+                  {items.length} {items.length === 1 ? 'item' : 'items'}
+                </div>
               </div>
             </div>
 
-            {/* NEW: Edit button + feedback messages */}
-            <div className="flex flex-col sm:flex-row gap-3 w-full max-w-md">
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => {
                   setSaveError("");
                   setSaveSuccess("");
                   setIsEditing(true);
                 }}
-                className="flex-1 px-4 py-2.5 rounded-xl bg-pink-500 text-white text-sm font-semibold shadow-sm hover:bg-pink-600 transition"
+                className="flex-1 px-6 py-3 rounded-xl bg-gradient-to-r from-[#003f87] to-[#ff6b35] text-white text-sm font-bold shadow-lg hover:shadow-xl hover:from-[#002a5c] hover:to-[#e55a20] transition-all transform hover:scale-105"
               >
-                Edit profile
+                ✏️ Edit Profile
               </button>
               
               <button
                 onClick={handleLogout}
-                className="flex-1 px-4 py-2.5 rounded-xl bg-gray-100 text-gray-700 text-sm font-semibold shadow-sm hover:bg-gray-200 transition border border-gray-200"
+                className="flex-1 px-6 py-3 rounded-xl bg-gray-100 text-gray-700 text-sm font-bold shadow-md hover:bg-gray-200 transition-all border-2 border-gray-200"
               >
-                Logout
+                👋 Logout
               </button>
             </div>
 
             {saveSuccess && (
-              <p className="mt-2 text-xs text-green-600">{saveSuccess}</p>
+              <div className="mt-3 p-3 bg-green-50 border border-green-200 rounded-xl">
+                <p className="text-sm text-green-700 font-medium">{saveSuccess}</p>
+              </div>
             )}
             {saveError && (
-              <p className="mt-2 text-xs text-red-600">{saveError}</p>
+              <div className="mt-3 p-3 bg-red-50 border border-red-200 rounded-xl">
+                <p className="text-sm text-red-700 font-medium">{saveError}</p>
+              </div>
             )}
           </div>
         </section>
 
-        {/* LISTINGS SECTION */}
-        <section className="bg-white rounded-3xl shadow-md border border-gray-100 p-6 md:p-8">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-xl font-semibold text-gray-900">
-              My posted items
-            </h2>
-            {items.length > 0 && (
-              <p className="text-xs text-gray-500">
-                Click a card to view details or delete from the right.
+        {/* MY LISTINGS SECTION */}
+        <section className="bg-white rounded-2xl shadow-lg border-2 border-[#003f87]/10 p-6">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h2 className="text-2xl font-black text-[#003f87] flex items-center gap-2">
+                🛍️ My Listings
+              </h2>
+              <p className="text-sm text-gray-600 mt-1">
+                Manage your active marketplace items
               </p>
+            </div>
+            {items.length > 0 && (
+              <Link
+                to="/sell"
+                className="px-4 py-2 rounded-xl bg-gradient-to-r from-[#003f87] to-[#ff6b35] text-white text-sm font-bold hover:shadow-lg transition-all"
+              >
+                + New Item
+              </Link>
             )}
           </div>
 
-          {items.length === 0 && (
-            <p className="text-gray-500 text-sm">
-              You haven&apos;t posted anything yet. Use the{" "}
-              <span className="font-medium text-pink-500">Sell</span> button in
-              the top navbar to create your first listing.
-            </p>
-          )}
-
-          <div className="mt-4 space-y-4">
-            {items.map((item) => (
-              <div
-                key={item.id}
-                className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3 rounded-2xl border border-gray-100 bg-gray-50/60 hover:bg-gray-50 transition shadow-sm px-4 py-3"
+          {items.length === 0 ? (
+            <div className="text-center py-16">
+              <div className="text-6xl mb-4">📦</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">No listings yet</h3>
+              <p className="text-gray-600 mb-6">
+                Start selling to your fellow CUNY students!
+              </p>
+              <Link
+                to="/sell"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#003f87] to-[#ff6b35] text-white text-sm font-bold hover:shadow-lg transition-all"
               >
-                {/* Left: title + price + category */}
-                <Link
-                  to={`/item/${item.id}`}
-                  className="flex-1 flex flex-col gap-1"
+                🚀 Post Your First Item
+              </Link>
+            </div>
+          ) : (
+            <div className="space-y-3">
+              {items.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex flex-col md:flex-row items-start md:items-center gap-4 p-4 rounded-xl border-2 border-gray-200 hover:border-[#ff6b35] hover:shadow-md transition-all bg-gradient-to-r from-white to-gray-50"
                 >
-                  <p className="text-base font-semibold text-gray-900">
-                    {item.title}
-                  </p>
-                  <p className="text-sm text-pink-600 font-bold">
-                    ${item.price}
-                  </p>
-                  <p className="text-xs text-gray-500">
-                    {item.category || "General"}
-                  </p>
-                </Link>
-
-                {/* Action buttons */}
-                <div className="flex gap-2 self-end md:self-center">
-                  {/* Edit button */}
+                  {/* Item info - clickable to view */}
                   <Link
-                    to={`/sell?edit=${item.id}`}
-                    className="px-3 py-1.5 text-xs font-semibold rounded-xl bg-blue-500 text-white hover:bg-pink-500 shadow-sm"
+                    to={`/item/${item.id}`}
+                    className="flex-1 min-w-0 hover:text-[#003f87] transition-colors"
                   >
-                    ✏️ Edit
+                    <p className="text-base font-bold text-gray-900 truncate">
+                      {item.title}
+                    </p>
+                    <p className="text-lg text-[#ff6b35] font-black">
+                      ${item.price}
+                    </p>
+                    <div className="flex items-center gap-2 mt-1">
+                      <span className="text-xs px-2 py-1 bg-blue-100 text-blue-700 rounded-full font-semibold">
+                        {item.category || "General"}
+                      </span>
+                      {item.sold && (
+                        <span className="text-xs px-2 py-1 bg-green-100 text-green-700 rounded-full font-semibold">
+                          ✅ Sold
+                        </span>
+                      )}
+                    </div>
                   </Link>
 
-                  {/* Mark as Sold / Sold badge */}
-                  <button
-                    onClick={() => soldItem(item.id)}
-                    disabled={item.sold}
-                    className={`px-3 py-1.5 text-xs font-semibold rounded-xl shadow-sm 
-                    ${item.sold
-                      ? "bg-gray-400 text-white cursor-not-allowed"
-                      : "bg-green-500 text-white hover:bg-green-600"
-                    }`}
-                  >
-                    {item.sold ? "✅ Sold" : "Mark Sold"}
-                  </button>
+                  {/* Action buttons */}
+                  <div className="flex gap-2 self-end md:self-center flex-wrap">
+                    {/* Edit button */}
+                    <Link
+                      to={`/sell?edit=${item.id}`}
+                      className="px-4 py-2 text-xs font-bold rounded-xl bg-[#003f87] text-white hover:bg-[#ff6b35] shadow-md hover:shadow-lg transition-all"
+                    >
+                      ✏️ Edit
+                    </Link>
 
-                  {/* Delete button */}
-                  <button
-                    onClick={() => deleteItem(item.id)}
-                    className="px-3 py-1.5 text-xs font-semibold rounded-xl bg-red-500 text-white hover:bg-red-600 shadow-sm"
-                  >
-                    🗑️ Delete
-                  </button>
+                    {/* Mark as Sold / Sold badge */}
+                    <button
+                      onClick={() => soldItem(item.id)}
+                      disabled={item.sold}
+                      className={`px-4 py-2 text-xs font-bold rounded-xl shadow-md transition-all 
+                      ${item.sold
+                        ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                        : "bg-green-500 text-white hover:bg-green-600 hover:shadow-lg"
+                      }`}
+                    >
+                      {item.sold ? "✅ Sold" : "✓ Mark Sold"}
+                    </button>
+
+                    {/* Delete button */}
+                    <button
+                      onClick={() => deleteItem(item.id)}
+                      className="px-4 py-2 text-xs font-bold rounded-xl bg-red-500 text-white hover:bg-red-600 shadow-md hover:shadow-lg transition-all"
+                    >
+                      🗑️
+                    </button>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </section>
       </div>
 
@@ -457,7 +467,7 @@ export default function ProfilePage() {
                   name="fullName"
                   value={profileForm.fullName}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-pink-400 text-sm"
+                  className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-[#ff6b35] text-sm"
                   placeholder="Your full name"
                 />
               </div>
@@ -471,7 +481,7 @@ export default function ProfilePage() {
                   name="schoolYear"
                   value={profileForm.schoolYear}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-pink-400 text-sm"
+                  className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-[#ff6b35] text-sm"
                   placeholder="e.g., Sophomore, Junior"
                 />
               </div>
@@ -485,7 +495,7 @@ export default function ProfilePage() {
                   name="graduationYear"
                   value={profileForm.graduationYear}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-pink-400 text-sm"
+                  className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-[#ff6b35] text-sm"
                   placeholder="e.g., 2027"
                 />
               </div>
@@ -498,7 +508,7 @@ export default function ProfilePage() {
                   name="campus"
                   value={profileForm.campus}
                   onChange={handleChange}
-                  className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-pink-400 text-sm"
+                  className="w-full px-3 py-2 rounded-xl border border-gray-200 bg-gray-50 focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-[#ff6b35] text-sm"
                 >
                   <option value="">Select your campus</option>
                   <option value="John Jay College">John Jay College</option>
@@ -534,7 +544,7 @@ export default function ProfilePage() {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="px-4 py-2 text-xs font-semibold rounded-xl bg-pink-500 text-white hover:bg-pink-600 disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="px-4 py-2 text-xs font-semibold rounded-xl bg-gradient-to-r from-[#003f87] to-[#ff6b35] text-white hover:from-[#002a5c] hover:to-[#e55a20] disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {saving ? "Saving..." : "Save changes"}
                 </button>

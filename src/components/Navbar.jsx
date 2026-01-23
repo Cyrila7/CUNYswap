@@ -10,8 +10,8 @@ export default function Navbar() {
 
   const isActive = (path) =>
     location.pathname === path
-      ? "text-pink-600"
-      : "text-gray-700 hover:text-pink-500";
+      ? "text-[#ff6b35] font-bold"
+      : "text-gray-700 hover:text-[#003f87] font-medium";
 
   const handleSellClick = () => {
     if (!user) {
@@ -23,20 +23,20 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4 py-3.5 flex items-center justify-between gap-4">
+    <nav className="sticky top-0 z-30 bg-white/95 backdrop-blur-md border-b-2 border-gray-200 shadow-lg">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
         {/* LEFT: LOGO */}
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="h-9 w-9 rounded-2xl bg-gradient-to-tr from-pink-500 via-purple-500 to-pink-600 flex items-center justify-center text-white text-lg font-bold shadow-md group-hover:shadow-lg transition-shadow">
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="h-11 w-11 rounded-2xl bg-gradient-to-tr from-[#003f87] to-[#ff6b35] flex items-center justify-center text-white text-xl font-black shadow-lg group-hover:shadow-xl transition-all transform group-hover:scale-110">
             C
           </div>
-          <span className="text-xl font-bold tracking-tight text-gray-900 font-serif">
-            CUNY<span className="text-pink-500">swap</span>
+          <span className="text-2xl font-black tracking-tight text-[#003f87] font-serif">
+            CUNY<span className="text-[#ff6b35]">swap</span>
           </span>
         </Link>
 
         {/* CENTER: DESKTOP LINKS */}
-        <div className="hidden md:flex items-center gap-6 text-sm font-medium">
+        <div className="hidden md:flex items-center gap-6 text-sm">
           <Link to="/" className={`${isActive("/")} transition-colors`}>
             Home
           </Link>
@@ -52,39 +52,39 @@ export default function Navbar() {
         </div>
 
         {/* RIGHT: DESKTOP ACTIONS */}
-        <div className="hidden md:flex items-center gap-3 text-sm font-medium">
+        <div className="hidden md:flex items-center gap-3 text-sm">
           <button
             onClick={handleSellClick}
-            className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-pink-600 text-white font-semibold shadow-md hover:shadow-lg hover:scale-105 transition-all duration-200"
+            className="px-6 py-3 rounded-xl bg-gradient-to-r from-[#ff6b35] to-[#ff8c5a] text-white font-black shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200 transform"
           >
-            Sell
+            + Sell
           </button>
 
           {user ? (
             <>
-              <Link to="/messages" className="text-gray-700 hover:text-pink-500 transition-colors">
+              <Link to="/messages" className="text-gray-700 hover:text-[#ff6b35] font-semibold transition-colors">
                 Messages
               </Link>
-              <Link to="/profile" className="text-gray-700 hover:text-pink-500 transition-colors">
+              <Link to="/profile" className="text-gray-700 hover:text-[#003f87] font-semibold transition-colors">
                 Profile
               </Link>
               <button
                 onClick={logout}
-                className="text-xs text-gray-500 hover:text-red-600 transition-colors"
+                className="text-xs text-gray-500 hover:text-red-600 font-semibold transition-colors"
               >
                 Logout
               </button>
             </>
           ) : (
             <>
-              <Link to="/login" className="text-gray-700 hover:text-pink-500 transition-colors">
+              <Link to="/login" className="text-gray-700 hover:text-[#003f87] font-semibold transition-colors">
                 Login
               </Link>
               <Link 
                 to="/signup" 
-                className="px-4 py-2 rounded-xl bg-gray-100 text-gray-900 hover:bg-gray-200 font-semibold transition-colors"
+                className="px-5 py-2.5 rounded-xl bg-[#003f87] text-white hover:bg-[#002a5c] font-bold transition-all transform hover:scale-105 shadow-md"
               >
-                Signup
+                Sign Up
               </Link>
             </>
           )}
@@ -92,7 +92,7 @@ export default function Navbar() {
 
         {/* MOBILE: HAMBURGER */}
         <button
-          className="md:hidden text-2xl text-gray-700"
+          className="md:hidden text-3xl text-[#003f87] hover:text-[#ff6b35] transition-colors"
           onClick={() => setMenuOpen((o) => !o)}
         >
           ☰
@@ -101,21 +101,21 @@ export default function Navbar() {
 
       {/* MOBILE PANEL */}
       {menuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white shadow-lg">
-          <div className="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3 text-sm font-medium">
+        <div className="md:hidden border-t-2 border-gray-200 bg-white shadow-xl">
+          <div className="max-w-6xl mx-auto px-4 py-5 flex flex-col gap-4 text-sm">
             <Link
               to="/"
               onClick={() => setMenuOpen(false)}
               className={isActive("/")}
             >
-              Home
+              🏠 Home
             </Link>
             <Link
               to="/browse"
               onClick={() => setMenuOpen(false)}
               className={isActive("/browse")}
             >
-              Browse
+              🔍 Browse
             </Link>
             {/* <Link
               to="/about"
@@ -129,14 +129,14 @@ export default function Navbar() {
               onClick={() => setMenuOpen(false)}
               className={isActive("/faq")}
             >
-              FAQ
+              ❓ FAQ
             </Link>
 
             <button
               onClick={handleSellClick}
-              className="mt-2 w-full px-4 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 via-purple-500 to-pink-600 text-white font-semibold shadow-md"
+              className="mt-2 w-full px-5 py-3 rounded-xl bg-gradient-to-r from-[#ff6b35] to-[#ff8c5a] text-white font-black shadow-lg"
             >
-              Sell
+              + Sell Item
             </button>
 
             {user ? (
@@ -144,25 +144,25 @@ export default function Navbar() {
                 <Link
                   to="/messages"
                   onClick={() => setMenuOpen(false)}
-                  className="text-gray-700 hover:text-pink-500 transition-colors"
+                  className="text-gray-700 hover:text-[#ff6b35] font-semibold transition-colors"
                 >
-                  Messages
+                  💬 Messages
                 </Link>
                 <Link
                   to="/profile"
                   onClick={() => setMenuOpen(false)}
-                  className="text-gray-700 hover:text-pink-500 transition-colors"
+                  className="text-gray-700 hover:text-[#003f87] font-semibold transition-colors"
                 >
-                  Profile
+                  👤 Profile
                 </Link>
                 <button
                   onClick={() => {
                     logout();
                     setMenuOpen(false);
                   }}
-                  className="text-gray-500 hover:text-red-600 text-left mt-1 transition-colors"
+                  className="text-gray-500 hover:text-red-600 text-left mt-1 font-semibold transition-colors"
                 >
-                  Logout
+                  ↪️ Logout
                 </button>
               </>
             ) : (
@@ -170,16 +170,16 @@ export default function Navbar() {
                 <Link
                   to="/login"
                   onClick={() => setMenuOpen(false)}
-                  className="text-gray-700 hover:text-pink-500 transition-colors"
+                  className="text-gray-700 hover:text-[#003f87] font-semibold transition-colors"
                 >
-                  Login
+                  🔑 Login
                 </Link>
                 <Link
                   to="/signup"
                   onClick={() => setMenuOpen(false)}
-                  className="px-4 py-2 rounded-xl bg-gray-100 text-gray-900 hover:bg-gray-200 font-semibold text-center transition-colors"
+                  className="px-5 py-2.5 rounded-xl bg-[#003f87] text-white hover:bg-[#002a5c] font-bold text-center transition-all shadow-md"
                 >
-                  Signup
+                  ✨ Sign Up
                 </Link>
               </>
             )}

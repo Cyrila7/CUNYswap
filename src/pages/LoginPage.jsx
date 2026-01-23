@@ -68,14 +68,14 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-50 via-white to-purple-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-orange-50 px-4">
       <div className="w-full max-w-md bg-white rounded-3xl shadow-xl px-8 py-10">
         {/* ICON + TITLE */}
         <div className="flex flex-col items-center mb-6">
-          <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-pink-500 to-purple-500 flex items-center justify-center text-white text-2xl font-bold mb-3">
+          <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-[#003f87] to-[#ff6b35] flex items-center justify-center text-white text-2xl font-bold mb-3">
             🔑
           </div>
-          <p className="text-xs font-semibold tracking-[0.25em] text-pink-500 mb-1">
+          <p className="text-xs font-semibold tracking-[0.25em] text-[#003f87] mb-1">
             CUNYswap
           </p>
           <h1 className="text-2xl font-bold text-gray-900">Welcome back</h1>
@@ -98,7 +98,7 @@ export default function LoginPage() {
               value={form.email}
               onChange={onChange}
               autoComplete="username"
-              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff6b35]"
             />
           </div>
 
@@ -114,14 +114,14 @@ export default function LoginPage() {
               value={form.password}
               onChange={onChange}
               autoComplete="current-password"
-              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pink-400"
+              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff6b35]"
             />
 
             {/* Forgot password link */}
             <button
               type="button"
               onClick={() => setShowReset(true)}
-              className="text-xs text-pink-500 mt-1 hover:underline"
+              className="text-xs text-[#ff6b35] mt-1 hover:underline"
             >
               Forgot password?
             </button>
@@ -176,7 +176,7 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full mt-2 rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold py-2.5 text-sm shadow-md hover:shadow-lg transition disabled:opacity-60"
+            className="w-full mt-2 rounded-xl bg-gradient-to-r from-[#003f87] to-[#ff6b35] text-white font-semibold py-2.5 text-sm shadow-md hover:shadow-lg transition disabled:opacity-60"
           >
             {loading ? "Logging in..." : "Log In"}
           </button>
@@ -195,10 +195,10 @@ export default function LoginPage() {
                 placeholder="Enter your school email"
                 value={resetEmail}
                 onChange={(e) => setResetEmail(e.target.value)}
-                className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-purple-400"
+                className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff6b35]"
               />
 
-              <button className="w-full rounded-xl bg-purple-500 text-white py-2.5 text-sm font-semibold hover:bg-purple-600 transition">
+              <button className="w-full rounded-xl bg-[#003f87] text-white py-2.5 text-sm font-semibold hover:bg-[#002a5c] transition">
                 Send reset link
               </button>
 
@@ -216,7 +216,7 @@ export default function LoginPage() {
           Don&apos;t have an account?{" "}
           <Link
             to="/signup"
-            className="text-pink-500 font-semibold hover:underline"
+            className="text-[#ff6b35] font-semibold hover:underline"
           >
             Create one
           </Link>

@@ -140,11 +140,11 @@ function SellPageInner() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50 px-4 py-10">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50 px-4 py-10">
       <div className="mx-auto max-w-2xl bg-white rounded-3xl shadow-xl border border-gray-100 p-8">
         {/* Header */}
         <div className="flex items-start gap-3 mb-6">
-          <div className="h-10 w-10 rounded-2xl bg-gradient-to-tr from-pink-500 to-purple-500 flex items-center justify-center text-white text-xl">
+          <div className="h-10 w-10 rounded-2xl bg-gradient-to-tr from-[#003f87] to-[#ff6b35] flex items-center justify-center text-white text-xl">
             +
           </div>
           <div>
@@ -169,7 +169,7 @@ function SellPageInner() {
               value={form.title}
               onChange={handleChange}
               required
-              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent"
+              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-transparent"
             />
           </div>
 
@@ -185,7 +185,7 @@ function SellPageInner() {
                 value={form.price}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent"
+                className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-transparent"
               />
             </div>
 
@@ -197,7 +197,7 @@ function SellPageInner() {
                 name="category"
                 value={form.category}
                 onChange={handleChange}
-                className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent bg-white appearance-none cursor-pointer"
+                className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-transparent bg-white appearance-none cursor-pointer"
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                   backgroundPosition: 'right 0.5rem center',
@@ -227,7 +227,7 @@ function SellPageInner() {
                 value={form.condition}
                 onChange={handleChange}
                 required
-                className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent appearance-none cursor-pointer"
+                className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-transparent appearance-none cursor-pointer"
                 style={{
                   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                   backgroundPosition: 'right 0.5rem center',
@@ -258,7 +258,7 @@ function SellPageInner() {
               value={form.campus}
               onChange={handleChange}
               required
-              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent appearance-none cursor-pointer"
+              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-transparent appearance-none cursor-pointer"
               style={{
                 backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E")`,
                 backgroundPosition: 'right 0.5rem center',
@@ -301,7 +301,7 @@ function SellPageInner() {
               rows={4}
               value={form.description}
               onChange={handleChange}
-              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-transparent"
+              className="w-full rounded-xl border border-gray-200 px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#ff6b35] focus:border-transparent"
             />
           </div>
 
@@ -315,7 +315,7 @@ function SellPageInner() {
               accept="image/*"
               multiple
               onChange={handleFileChange}
-              className="w-full text-sm text-gray-700 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-medium file:bg-cuny-50 file:text-pink-600 hover:file:bg-cuny-100"
+              className="w-full text-sm text-gray-700 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-[#003f87] hover:file:bg-blue-100"
             />
             <p className="text-xs text-gray-400 mt-1">
               You can upload up to 5 images.
@@ -375,7 +375,7 @@ function SellPageInner() {
             <input
               type="checkbox"
               required
-              className="h-4 w-4 text-pink-600 border-gray-300 rounded focus:ring-pink-500"
+              className="h-4 w-4 text-[#003f87] border-gray-300 rounded focus:ring-[#ff6b35]"
             />
             <label className="ml-2 block text-sm text-gray-700">
               I agree that my post follows CUNYswap's community rules
@@ -386,10 +386,36 @@ function SellPageInner() {
           <button
             type="submit"
             disabled={loading}
-            className="mt-2 w-full rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold py-2.5 text-sm shadow-md hover:shadow-lg transition disabled:opacity-60"
+            className="mt-2 w-full rounded-xl bg-gradient-to-r from-[#003f87] to-[#ff6b35] text-white font-semibold py-2.5 text-sm shadow-md hover:shadow-lg transition disabled:opacity-60"
           >
-            {loading ? "Posting..." : "Post item"}
+            {loading ? "Creating listing..." : "Post Listing"}
           </button>
+
+          {/* Tips */}
+          <div className="mt-6 p-5 bg-blue-50 rounded-2xl border border-blue-100">
+            <h3 className="text-sm font-bold text-[#003f87] mb-3 flex items-center gap-2">
+              <span className="text-xl">💡</span>
+              Quick Tips for Success
+            </h3>
+            <ul className="space-y-2 text-xs text-gray-700">
+              <li className="flex items-start gap-2">
+                <span className="text-[#003f87]">•</span>
+                <span><strong>Add photos:</strong> Listings with images get 5x more interest</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#003f87]">•</span>
+                <span><strong>Price fairly:</strong> Check similar items to price competitively</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#003f87]">•</span>
+                <span><strong>Respond quickly:</strong> Fast replies = faster sales</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[#003f87]">•</span>
+                <span><strong>Meet on campus:</strong> Use public spots like the library or student center</span>
+              </li>
+            </ul>
+          </div>
         </form>
       </div>
     </div>
