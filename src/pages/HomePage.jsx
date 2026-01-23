@@ -121,6 +121,16 @@ export default function HomePage() {
     <div className="min-h-screen bg-gray-50">
       {/* Compact Header - Marketplace Style */}
       <section className="max-w-6xl mx-auto px-4 pt-6 pb-4">
+        {/* Tagline */}
+        <div className="text-center mb-4">
+          <h1 className="text-2xl sm:text-3xl font-black text-gray-900 tracking-tight font-serif">
+            Campus <span className="bg-gradient-to-r from-[#003f87] to-[#ff6b35] bg-clip-text text-transparent">Marketplace</span>
+          </h1>
+          <p className="text-sm sm:text-base text-gray-600 mt-2 font-medium">
+            Buy, sell, and trade items safely with your fellow students.
+          </p>
+        </div>
+
         {/* Search - Primary Focus */}
         <div className="bg-white rounded-2xl shadow-md border border-gray-200 p-4">
           <form onSubmit={handleSearch} className="flex items-center gap-3">

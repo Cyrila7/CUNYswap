@@ -107,11 +107,11 @@ export default function FaqPage() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-white to-purple-50 py-12 px-4">
+    <div className="min-h-screen bg-gray-50 py-12 px-4">
       <div className="max-w-4xl mx-auto">
         {/* Header Section */}
         <div className="text-center mb-10">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 rounded-3xl shadow-2xl mb-6 animate-pulse">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-[#003f87] to-[#ff6b35] rounded-3xl shadow-lg mb-6">
             <svg
               className="w-10 h-10 text-white"
               fill="none"
@@ -126,7 +126,7 @@ export default function FaqPage() {
               />
             </svg>
           </div>
-          <p className="text-xs font-bold tracking-[0.3em] text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600 mb-3 uppercase">
+          <p className="text-xs font-bold tracking-[0.3em] text-transparent bg-clip-text bg-gradient-to-r from-[#003f87] to-[#ff6b35] mb-3 uppercase">
             CUNYSWAP
           </p>
           <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight font-serif">
@@ -159,7 +159,7 @@ export default function FaqPage() {
                 placeholder="Search questions... (e.g., 'payments', 'meetups', 'email')"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-11 pr-4 py-4 bg-white border-2 border-gray-200 rounded-2xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-pink-400 focus:ring-4 focus:ring-pink-100 transition-all duration-200 shadow-sm"
+                className="w-full pl-11 pr-4 py-4 bg-white border-2 border-gray-200 rounded-2xl text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#ff6b35] focus:ring-4 focus:ring-orange-100 transition-all duration-200 shadow-sm"
               />
               {searchQuery && (
                 <button
@@ -183,7 +183,7 @@ export default function FaqPage() {
         {/* FAQ Card */}
         {filteredFaqs.length > 0 ? (
           <section
-            className="bg-white rounded-3xl shadow-2xl border border-gray-100 overflow-hidden"
+            className="bg-white rounded-3xl shadow-lg border border-gray-200 overflow-hidden"
             aria-labelledby="faq-title"
           >
             <ul className="divide-y divide-gray-100">
@@ -199,7 +199,7 @@ export default function FaqPage() {
                       id={btnId}
                       className={`w-full px-6 sm:px-8 py-6 text-left flex items-start justify-between gap-4 transition-all duration-300 group ${
                         isOpen
-                          ? "bg-gradient-to-r from-pink-50 via-purple-50 to-indigo-50"
+                          ? "bg-gradient-to-r from-blue-50 to-orange-50"
                           : ""
                       }`}
                       aria-expanded={isOpen}
@@ -209,20 +209,20 @@ export default function FaqPage() {
                       <span className="flex items-start flex-1">
                         <span className={`inline-flex items-center justify-center w-8 h-8 rounded-xl text-white text-sm font-bold mr-4 flex-shrink-0 shadow-md transition-all duration-300 ${
                           isOpen 
-                            ? "bg-gradient-to-br from-pink-500 via-purple-500 to-indigo-500 scale-110" 
-                            : "bg-gradient-to-br from-pink-400 to-purple-400 group-hover:scale-110"
+                            ? "bg-gradient-to-br from-[#003f87] to-[#ff6b35] scale-110" 
+                            : "bg-gradient-to-br from-[#003f87] to-[#0052b3] group-hover:scale-110"
                         }`}>
                           {idx + 1}
                         </span>
                         <span className={`text-base sm:text-lg font-semibold transition-colors duration-200 leading-snug font-serif ${
-                          isOpen ? "text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600" : "text-gray-900 group-hover:text-pink-600"
+                          isOpen ? "text-transparent bg-clip-text bg-gradient-to-r from-[#003f87] to-[#ff6b35]" : "text-gray-900 group-hover:text-[#ff6b35]"
                         }`}>
                           {item.q}
                         </span>
                       </span>
                       <span
                         className={`flex-shrink-0 w-6 h-6 transition-all duration-300 ${
-                          isOpen ? "rotate-180 text-pink-500" : "text-gray-400 group-hover:text-pink-400"
+                          isOpen ? "rotate-180 text-[#ff6b35]" : "text-gray-400 group-hover:text-[#ff6b35]"
                         }`}
                         aria-hidden="true"
                       >
@@ -250,8 +250,8 @@ export default function FaqPage() {
                         aria-labelledby={btnId}
                         className="px-6 sm:px-8 pb-6 animate-in slide-in-from-top duration-300"
                       >
-                        <div className="ml-12 pl-4 border-l-4 border-gradient-to-b from-pink-300 to-purple-300 relative">
-                          <div className="absolute -left-[2px] top-0 bottom-0 w-1 bg-gradient-to-b from-pink-400 to-purple-400 rounded-full"></div>
+                        <div className="ml-12 pl-4 border-l-4 border-[#ff6b35] relative">
+                          <div className="absolute -left-[2px] top-0 bottom-0 w-1 bg-gradient-to-b from-[#003f87] to-[#ff6b35] rounded-full"></div>
                           {item.isList ? (
                             <ul className="space-y-3 text-gray-700 leading-relaxed text-sm sm:text-base">
                               {item.a.map((line, i) => (
@@ -289,7 +289,7 @@ export default function FaqPage() {
             </ul>
           </section>
         ) : (
-          <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-12 text-center">
+          <div className="bg-white rounded-3xl shadow-lg border border-gray-200 p-12 text-center">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-100 rounded-full mb-4">
               <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -297,11 +297,11 @@ export default function FaqPage() {
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">No results found</h3>
             <p className="text-gray-600 mb-4">
-              We couldn't find any questions matching "<span className="font-semibold text-pink-600">{searchQuery}</span>"
+              We couldn't find any questions matching "<span className="font-semibold text-[#ff6b35]">{searchQuery}</span>"
             </p>
             <button
               onClick={() => setSearchQuery("")}
-              className="inline-flex items-center px-4 py-2 bg-pink-500 text-white rounded-lg hover:bg-pink-600 transition-colors"
+              className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#ff6b35] to-[#ff8c5a] text-white rounded-lg hover:shadow-lg transition-all"
             >
               Clear search
             </button>
@@ -309,13 +309,13 @@ export default function FaqPage() {
         )}
 
         {/* Help Section */}
-        <div className="mt-12 text-center bg-gradient-to-br from-white via-pink-50 to-purple-50 rounded-3xl shadow-2xl border border-gray-100 p-10 relative overflow-hidden">
+        <div className="mt-12 text-center bg-white rounded-3xl shadow-lg border border-gray-200 p-10 relative overflow-hidden">
           {/* Decorative gradient circles */}
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-pink-200 to-purple-200 rounded-full blur-3xl opacity-30"></div>
-          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-indigo-200 to-pink-200 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-100 to-orange-100 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-orange-100 to-blue-100 rounded-full blur-3xl opacity-30"></div>
           
           <div className="relative z-10">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-cuny-500 to-cuny-blue-500 rounded-2xl mb-5 shadow-lg">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-[#003f87] to-[#ff6b35] rounded-2xl mb-5 shadow-lg">
               <svg
                 className="w-8 h-8 text-white"
                 fill="none"
@@ -338,7 +338,7 @@ export default function FaqPage() {
             </p>
             <a
               href="mailto:cunyswap@gmail.com"
-              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white font-semibold rounded-2xl hover:from-pink-600 hover:via-purple-600 hover:to-indigo-600 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 active:scale-95 text-base"
+              className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#ff6b35] to-[#ff8c5a] text-white font-semibold rounded-2xl hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95 text-base"
             >
               <svg
                 className="w-5 h-5 mr-2"
