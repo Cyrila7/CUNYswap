@@ -349,7 +349,7 @@ export default function HomePage() {
       {/* Footer */}
       <div className="border-t border-gray-200 py-6 text-center text-xs text-gray-500">
         <p>
-          <strong>Disclaimer:</strong> CUNYswap is student-led and not affiliated with CUNY.
+          <strong className="text-[#003f87]">Disclaimer:</strong> CUNYswap is student-led and not affiliated with CUNY.
         </p>
       </div>
     </div>

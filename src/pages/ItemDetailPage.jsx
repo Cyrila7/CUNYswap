@@ -197,8 +197,9 @@ export default function ItemDetailPage() {
   if (!item) return null;
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-10">
-      <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden grid grid-cols-1 md:grid-cols-2">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-orange-50 py-10">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden grid grid-cols-1 md:grid-cols-2">
 
         {/* IMAGE SIDE - Carousel with click to enlarge */}
         <div className="bg-gradient-to-br from-gray-100 to-gray-200 flex flex-col items-center justify-center p-6 relative">
@@ -463,6 +464,14 @@ export default function ItemDetailPage() {
           </div>
         </div>
       )}
+
+      {/* Footer */}
+      <div className="border-t border-gray-200 py-6 text-center text-xs text-gray-500 mt-10">
+        <p>
+          <strong className="text-[#003f87]">Disclaimer:</strong> CUNYswap is student-led and not affiliated with CUNY.
+        </p>
+      </div>
+    </div>
     </div>
   );
 }
