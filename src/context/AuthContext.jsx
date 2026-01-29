@@ -9,6 +9,7 @@ import {
   sendPasswordResetEmail,
 } from "firebase/auth";
 import { doc, setDoc, getDoc, updateDoc, serverTimestamp } from "firebase/firestore";
+import { notifyAdminNewUser } from "../lib/notifications";
 
 const Authcontext = createContext(null);
 const ALLOWED_DOMAIN = "login.cuny.edu";
@@ -187,7 +188,17 @@ const verifyCode = async (email, code, password, displayName, schoolYear, gradua
 
     console.log("✅ Firebase user created successfully");
     
-    // 5. User is now logged in and verified
+    // 5. 🔔 Notify admin of new user (non-blocking)
+    notifyAdminNewUser({
+      userEmail: lowerEmail,
+      userName: displayName,
+      timestamp: Date.now()
+    }).catch(err => {
+      // Log but don't fail registration if notification fails
+      console.warn("⚠️ Admin notification failed:", err);
+    });
+    
+    // 6. User is now logged in and verified
     setUser(cred.user);
     return cred.user;
   } catch (error) {

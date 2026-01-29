@@ -78,6 +78,66 @@ export async function sendMessageNotification({
 }
 
 /**
+ * Sends notification to admin when a new user joins CUNYswap
+ * 
+ * @param {Object} params - User information
+ * @param {string} params.userEmail - Email of the new user
+ * @param {string} params.userName - Name of the new user (optional)
+ * @param {number} params.timestamp - When they joined (optional)
+ * 
+ * @returns {Promise<boolean>} - Returns true if notification sent successfully
+ * 
+ * @example
+ * // Call this after successful email verification
+ * await notifyAdminNewUser({
+ *   userEmail: 'newstudent@login.cuny.edu',
+ *   userName: 'John Doe',
+ *   timestamp: Date.now()
+ * });
+ */
+export async function notifyAdminNewUser({
+  userEmail,
+  userName,
+  timestamp
+}) {
+  try {
+    console.log('🔔 Notifying admin of new user:', userEmail);
+
+    const payload = {
+      userEmail,
+      userName,
+      timestamp: timestamp || Date.now()
+    };
+    
+    console.log('📤 Sending admin notification payload:', payload);
+
+    // Use production URL if available, otherwise localhost
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+    const response = await fetch(`${apiUrl}/api/notify-new-user`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(payload)
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      console.error('❌ Failed to send admin notification:', error);
+      return false;
+    }
+
+    console.log('✅ Admin notified of new user:', userEmail);
+    return true;
+    
+  } catch (error) {
+    console.error('❌ Error notifying admin:', error);
+    // Don't throw - we don't want to break user registration if notification fails
+    return false;
+  }
+}
+
+/**
  * IMPORTANT NOTES FOR IMPLEMENTATION:
  * 
  * 1. You need to store user emails in your Firestore conversations collection
