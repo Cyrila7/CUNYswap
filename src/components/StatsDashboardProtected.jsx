@@ -107,7 +107,7 @@ const StatsDashboardProtected = () => {
 
   if (stats.loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-indigo-600 mx-auto"></div>
           <p className="mt-4 text-gray-600 text-lg">Loading stats...</p>
@@ -125,7 +125,7 @@ const StatsDashboardProtected = () => {
     : 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-orange-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         
         {/* Admin Badge */}
@@ -193,7 +193,7 @@ const StatsDashboardProtected = () => {
           </div>
 
           {/* Total Listings Card */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 border-l-4 border-purple-500 transform hover:scale-105 transition-transform duration-200">
+          <div className="bg-white rounded-2xl shadow-xl p-8 border-l-4 border-[#003f87] transform hover:scale-105 transition-transform duration-200">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-500 text-sm font-medium uppercase tracking-wide">
@@ -202,7 +202,7 @@ const StatsDashboardProtected = () => {
                 <h2 className="text-5xl font-bold text-gray-900 mt-2">
                   {stats.totalListings}
                 </h2>
-                <p className="text-purple-600 text-sm mt-2 font-semibold">
+                <p className="text-[#003f87] text-sm mt-2 font-semibold">
                   {stats.activeListings} active
                 </p>
               </div>
@@ -229,7 +229,7 @@ const StatsDashboardProtected = () => {
           </div>
 
           {/* Conversations Card */}
-          <div className="bg-white rounded-2xl shadow-xl p-8 border-l-4 border-pink-500 transform hover:scale-105 transition-transform duration-200">
+          <div className="bg-white rounded-2xl shadow-xl p-8 border-l-4 border-[#ff6b35] transform hover:scale-105 transition-transform duration-200">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-gray-500 text-sm font-medium uppercase tracking-wide">
@@ -238,7 +238,7 @@ const StatsDashboardProtected = () => {
                 <h2 className="text-5xl font-bold text-gray-900 mt-2">
                   {stats.totalMessages}
                 </h2>
-                <p className="text-pink-600 text-sm mt-2 font-semibold">
+                <p className="text-[#ff6b35] text-sm mt-2 font-semibold">
                   Active chats
                 </p>
               </div>
@@ -247,7 +247,7 @@ const StatsDashboardProtected = () => {
           </div>
 
           {/* Growth Card */}
-          <div className="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl shadow-xl p-8 text-white transform hover:scale-105 transition-transform duration-200">
+          <div className="bg-gradient-to-br from-[#003f87] to-[#0052b3] rounded-2xl shadow-xl p-8 text-white transform hover:scale-105 transition-transform duration-200">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-indigo-100 text-sm font-medium uppercase tracking-wide">
@@ -293,11 +293,11 @@ const StatsDashboardProtected = () => {
                 <div className="flex items-center">
                   <div className="w-32 bg-gray-200 rounded-full h-3 mr-3">
                     <div 
-                      className="bg-purple-500 h-3 rounded-full transition-all duration-500"
+                      className="bg-[#003f87] h-3 rounded-full transition-all duration-500"
                       style={{ width: `${activeRate}%` }}
                     ></div>
                   </div>
-                  <span className="font-bold text-purple-600">{activeRate}%</span>
+                  <span className="font-bold text-[#003f87]">{activeRate}%</span>
                 </div>
               </div>
               <div className="flex justify-between items-center">

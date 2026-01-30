@@ -358,7 +358,7 @@ export default function BrowsePage() {
       )}
 
       {/* Info Banner */}
-      <div className="mb-6 bg-gradient-to-r from-blue-100 via-purple-50 to-orange-100 border-2 border-[#003f87] rounded-2xl p-4 shadow-md">
+      <div className="mb-6 bg-gradient-to-r from-blue-100 via-white to-orange-100 border-2 border-[#003f87] rounded-2xl p-4 shadow-md">
         <p className="text-sm text-[#003f87] text-center font-bold">
           ✨ Browse listings from all CUNY campuses — filter by school to find nearby items
         </p>

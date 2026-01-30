@@ -60,14 +60,14 @@ export default function VerifyEmailPage() {
   }, [query, hasVerified]); // ✅ Added hasVerified to dependencies
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-50 via-white to-purple-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 via-white to-orange-50 px-4">
       <div className="w-full max-w-md bg-white rounded-3xl shadow-xl px-8 py-10 text-center">
         {/* Icon */}
-        <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-pink-500 to-purple-500 flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
+        <div className="h-12 w-12 rounded-2xl bg-gradient-to-tr from-[#003f87] to-[#ff6b35] flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4">
           ✉️
         </div>
 
-        <p className="text-xs font-semibold tracking-[0.25em] text-pink-500 mb-1">
+        <p className="text-xs font-semibold tracking-[0.25em] text-[#ff6b35] mb-1">
           CUNYSWAP
         </p>
         <h1 className="text-2xl font-bold text-gray-900 mb-2">
@@ -88,14 +88,14 @@ export default function VerifyEmailPage() {
         <div className="mt-6 flex flex-col gap-3">
           <button
             onClick={() => navigate("/login")}
-            className="w-full rounded-xl bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold py-2.5 text-sm shadow-md hover:shadow-lg transition"
+            className="w-full rounded-xl bg-gradient-to-r from-[#ff6b35] to-[#ff8c5a] text-white font-semibold py-2.5 text-sm shadow-md hover:shadow-lg transition"
           >
             Go to login
           </button>
 
         <Link
             to="/signup"
-            className="text-xs text-gray-500 hover:text-pink-500 transition"
+            className="text-xs text-gray-500 hover:text-[#ff6b35] transition"
           >
             Need a new account? Create one
           </Link>

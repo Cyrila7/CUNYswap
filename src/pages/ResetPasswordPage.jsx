@@ -45,7 +45,7 @@ export default function ResetPasswordPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-pink-50 via-white to-purple-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-blue-50 via-white to-orange-50 px-4">
       <div className="w-full max-w-md bg-white rounded-3xl shadow-xl px-8 py-10">
 
         <h1 className="text-2xl font-bold text-center mb-4">
@@ -82,7 +82,7 @@ export default function ResetPasswordPage() {
               onChange={(e) => setConfirmPass(e.target.value)}
             />
 
-            <button className="w-full rounded-xl bg-pink-500 text-white py-2.5">
+            <button className="w-full rounded-xl bg-[#ff6b35] hover:bg-[#ff5722] text-white py-2.5 transition-colors">
               Reset password
             </button>
           </form>

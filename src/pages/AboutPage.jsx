@@ -11,7 +11,7 @@ export default function AboutPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50 via-white to-orange-50">
       <div className="max-w-5xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
         {/* Hero Section */}
         <div 
@@ -19,16 +19,16 @@ export default function AboutPage() {
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-10'
           }`}
         >
-          <div className="inline-flex items-center justify-center h-20 w-20 rounded-3xl bg-gradient-to-tr from-pink-500 to-purple-500 mb-6 shadow-2xl animate-pulse">
+          <div className="inline-flex items-center justify-center h-20 w-20 rounded-3xl bg-gradient-to-tr from-[#003f87] to-[#ff6b35] mb-6 shadow-2xl animate-pulse">
             <span className="text-white text-4xl font-bold">C</span>
           </div>
           <h1 className="text-5xl sm:text-6xl font-extrabold text-gray-900 mb-6 tracking-tight">
-            About CUNY<span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-600">swap</span>
+            About CUNY<span className="text-transparent bg-clip-text bg-gradient-to-r from-[#003f87] to-[#ff6b35]">swap</span>
           </h1>
           <p className="text-2xl text-gray-600 max-w-3xl mx-auto font-light leading-relaxed">
             A trusted campus marketplace built by students, for students.
           </p>
-          <div className="mt-8 w-24 h-1 mx-auto bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
+          <div className="mt-8 w-24 h-1 mx-auto bg-gradient-to-r from-[#003f87] to-[#ff6b35] rounded-full"></div>
         </div>
 
         {/* Mission Section */}
@@ -43,13 +43,13 @@ export default function AboutPage() {
             <span className="font-serif">Our Mission</span>
           </h2>
           <p className="text-lg text-gray-700 leading-relaxed mb-4 font-light">
-            CUNYswap exists to create a <span className="font-semibold text-pink-600">safe, simple, and community-driven</span> marketplace 
+            CUNYswap exists to create a <span className="font-semibold text-[#003f87]">safe, simple, and community-driven</span> marketplace 
             exclusively for CUNY students. We believe buying and selling on campus should be easier, faster, and free from scams — 
             because campus communities deserve platforms built for them, not for strangers.
           </p>
           <p className="text-lg text-gray-700 leading-relaxed font-light">
             Whether you're selling textbooks after finals, searching for affordable furniture, or giving new life to items 
-            you no longer need, <span className="font-semibold text-purple-600">CUNYswap connects you with real students</span> across 
+            you no longer need, <span className="font-semibold text-[#ff6b35]">CUNYswap connects you with real students</span> across 
             the CUNY system.
           </p>
         </div>
@@ -68,7 +68,7 @@ export default function AboutPage() {
           <div className="grid sm:grid-cols-2 gap-8">
             <div className="flex gap-4 group hover:scale-105 transition-transform duration-300">
               <div className="flex-shrink-0">
-                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-pink-400 to-pink-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-[#003f87] to-[#0052b3] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
                   <span className="text-3xl">🔐</span>
                 </div>
               </div>
@@ -82,7 +82,7 @@ export default function AboutPage() {
 
             <div className="flex gap-4 group hover:scale-105 transition-transform duration-300">
               <div className="flex-shrink-0">
-                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
+                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-[#ff6b35] to-[#ff8c5a] flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow">
                   <span className="text-3xl">⚡</span>
                 </div>
               </div>
@@ -140,7 +140,7 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-8">
             <div className="flex gap-5 items-start group hover:translate-x-2 transition-transform duration-300">
-              <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:shadow-xl transition-shadow">
+              <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-[#003f87] to-[#ff6b35] flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:shadow-xl transition-shadow">
                 1
               </div>
               <div>
@@ -152,7 +152,7 @@ export default function AboutPage() {
             </div>
 
             <div className="flex gap-5 items-start group hover:translate-x-2 transition-transform duration-300">
-              <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:shadow-xl transition-shadow">
+              <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-[#003f87] to-[#ff6b35] flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:shadow-xl transition-shadow">
                 2
               </div>
               <div>
@@ -164,7 +164,7 @@ export default function AboutPage() {
             </div>
 
             <div className="flex gap-5 items-start group hover:translate-x-2 transition-transform duration-300">
-              <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:shadow-xl transition-shadow">
+              <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-[#003f87] to-[#ff6b35] flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:shadow-xl transition-shadow">
                 3
               </div>
               <div>
@@ -176,7 +176,7 @@ export default function AboutPage() {
             </div>
 
             <div className="flex gap-5 items-start group hover:translate-x-2 transition-transform duration-300">
-              <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:shadow-xl transition-shadow">
+              <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gradient-to-br from-[#003f87] to-[#ff6b35] flex items-center justify-center text-white font-bold text-xl shadow-lg group-hover:shadow-xl transition-shadow">
                 4
               </div>
               <div>
@@ -191,7 +191,7 @@ export default function AboutPage() {
 
         {/* Who Can Use Section */}
         <div 
-          className={`bg-gradient-to-r from-pink-500 via-purple-500 to-pink-600 rounded-3xl shadow-2xl p-10 mb-10 text-white hover:shadow-3xl transition-all duration-500 transform ${
+          className={`bg-gradient-to-r from-[#003f87] via-[#0066cc] to-[#ff6b35] rounded-3xl shadow-2xl p-10 mb-10 text-white hover:shadow-3xl transition-all duration-500 transform ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
           style={{ transitionDelay: '400ms' }}
@@ -229,31 +229,31 @@ export default function AboutPage() {
           </p>
           <ul className="space-y-4 text-gray-700">
             <li className="flex items-start gap-3 group hover:translate-x-1 transition-transform">
-              <span className="text-pink-500 font-bold text-2xl">✓</span>
+              <span className="text-[#ff6b35] font-bold text-2xl">✓</span>
               <span className="text-lg">Email verification required</span>
             </li>
             <li className="flex items-start gap-3 group hover:translate-x-1 transition-transform">
-              <span className="text-pink-500 font-bold text-2xl">✓</span>
+              <span className="text-[#ff6b35] font-bold text-2xl">✓</span>
               <span className="text-lg">Firebase-secured accounts</span>
             </li>
             <li className="flex items-start gap-3 group hover:translate-x-1 transition-transform">
-              <span className="text-pink-500 font-bold text-2xl">✓</span>
+              <span className="text-[#ff6b35] font-bold text-2xl">✓</span>
               <span className="text-lg">Scam-prevention through student-only access</span>
             </li>
             <li className="flex items-start gap-3 group hover:translate-x-1 transition-transform">
-              <span className="text-pink-500 font-bold text-2xl">✓</span>
+              <span className="text-[#ff6b35] font-bold text-2xl">✓</span>
               <span className="text-lg">Reporting tools to flag suspicious users</span>
             </li>
             <li className="flex items-start gap-3 group hover:translate-x-1 transition-transform">
-              <span className="text-pink-500 font-bold text-2xl">✓</span>
+              <span className="text-[#ff6b35] font-bold text-2xl">✓</span>
               <span className="text-lg">Meetups encouraged only in public campus spaces</span>
             </li>
             <li className="flex items-start gap-3 group hover:translate-x-1 transition-transform">
-              <span className="text-pink-500 font-bold text-2xl">✓</span>
+              <span className="text-[#ff6b35] font-bold text-2xl">✓</span>
               <span className="text-lg">Contactless pickup and drop off options for added safety</span>
             </li>
           </ul>
-          <div className="mt-6 p-6 bg-gradient-to-r from-pink-50 to-purple-50 rounded-2xl border-l-4 border-pink-500">
+          <div className="mt-6 p-6 bg-gradient-to-r from-blue-50 to-orange-50 rounded-2xl border-l-4 border-[#ff6b35]">
             <p className="text-gray-800 font-semibold text-lg">
               Your safety isn't optional — it's the foundation of the entire platform.
             </p>
@@ -262,7 +262,7 @@ export default function AboutPage() {
 
         {/* Vision Section */}
         <div 
-          className={`bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 rounded-3xl shadow-2xl p-10 mb-10 text-white hover:shadow-3xl transition-all duration-500 transform ${
+          className={`bg-gradient-to-br from-[#003f87] via-[#0066cc] to-[#ff6b35] rounded-3xl shadow-2xl p-10 mb-10 text-white hover:shadow-3xl transition-all duration-500 transform ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
           style={{ transitionDelay: '600ms' }}
@@ -313,13 +313,13 @@ export default function AboutPage() {
             <span className="font-serif">Core Values</span>
           </h2>
           <div className="space-y-6">
-            <div className="border-l-4 border-pink-500 pl-6 py-2 hover:border-pink-600 transition-colors">
+            <div className="border-l-4 border-[#ff6b35] pl-6 py-2 hover:border-[#ff5722] transition-colors">
               <h3 className="text-xl font-bold text-gray-900 mb-2">1️⃣ Safety First</h3>
               <p className="text-gray-600 leading-relaxed">
                 Students deserve a trusted environment without scams or strangers.
               </p>
             </div>
-            <div className="border-l-4 border-purple-500 pl-6 py-2 hover:border-purple-600 transition-colors">
+            <div className="border-l-4 border-[#003f87] pl-6 py-2 hover:border-[#002f67] transition-colors">
               <h3 className="text-xl font-bold text-gray-900 mb-2">2️⃣ Community-Driven</h3>
               <p className="text-gray-600 leading-relaxed">
                 Every feature is designed for real student needs — not generic marketplaces.
@@ -358,9 +358,9 @@ export default function AboutPage() {
             <span className="font-serif">Roadmap</span>
           </h2>
           <div className="space-y-8">
-            <div className="relative pl-8 border-l-4 border-pink-500">
-              <div className="absolute -left-3 top-0 h-6 w-6 rounded-full bg-pink-500 shadow-lg"></div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Phase 1 — Launch <span className="text-pink-500">(NOW)</span></h3>
+            <div className="relative pl-8 border-l-4 border-[#ff6b35]">
+              <div className="absolute -left-3 top-0 h-6 w-6 rounded-full bg-[#ff6b35] shadow-lg"></div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Phase 1 — Launch <span className="text-[#ff6b35]">(NOW)</span></h3>
               <ul className="text-gray-600 space-y-1">
                 <li>• User accounts + verification</li>
                 <li>• Posting items</li>
@@ -370,8 +370,8 @@ export default function AboutPage() {
               </ul>
             </div>
 
-            <div className="relative pl-8 border-l-4 border-purple-500">
-              <div className="absolute -left-3 top-0 h-6 w-6 rounded-full bg-purple-500 shadow-lg"></div>
+            <div className="relative pl-8 border-l-4 border-[#003f87]">
+              <div className="absolute -left-3 top-0 h-6 w-6 rounded-full bg-[#003f87] shadow-lg"></div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">Phase 2 — Growth</h3>
               <ul className="text-gray-600 space-y-1">
                 <li>• Campus-specific communities</li>
@@ -419,24 +419,24 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-4 text-lg leading-relaxed font-light">
             <p>
-              CUNYswap was created by <span className="font-bold text-pink-400">Cyril</span>, a CUNY student who experienced 
+              CUNYswap was created by <span className="font-bold text-[#ff6b35]">Cyril</span>, a CUNY student who experienced 
               the same frustrations every student deals with:
             </p>
             <ul className="space-y-2 pl-6">
               <li className="flex items-start gap-3">
-                <span className="text-pink-400">•</span>
+                <span className="text-[#ff6b35]">•</span>
                 <span>Buying overpriced textbooks</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-pink-400">•</span>
+                <span className="text-[#ff6b35]">•</span>
                 <span>Getting scammed on Facebook Marketplace</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-pink-400">•</span>
+                <span className="text-[#ff6b35]">•</span>
                 <span>Having no safe way to sell used items to fellow students</span>
               </li>
               <li className="flex items-start gap-3">
-                <span className="text-pink-400">•</span>
+                <span className="text-[#ff6b35]">•</span>
                 <span>Wanting a simple, student-only community</span>
               </li>
             </ul>
@@ -447,7 +447,7 @@ export default function AboutPage() {
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 mt-6">
               <p className="text-xl font-semibold text-center">
                 CUNYswap started as a personal project, but quickly became a mission:<br/>
-                <span className="text-pink-400">to give every CUNY student a trusted marketplace built just for them.</span>
+                <span className="text-[#ff6b35]">to give every CUNY student a trusted marketplace built just for them.</span>
               </p>
             </div>
           </div>
@@ -455,7 +455,7 @@ export default function AboutPage() {
 
         {/* CTA Section */}
         <div 
-          className={`bg-gradient-to-br from-pink-600 via-purple-600 to-indigo-600 rounded-3xl shadow-2xl p-12 text-center text-white hover:scale-105 transition-all duration-500 transform ${
+          className={`bg-gradient-to-br from-[#ff6b35] via-[#003f87] to-[#0052b3] rounded-3xl shadow-2xl p-12 text-center text-white hover:scale-105 transition-all duration-500 transform ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
           style={{ transitionDelay: '1000ms' }}
@@ -470,7 +470,7 @@ export default function AboutPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/signup"
-              className="px-8 py-4 rounded-2xl bg-white text-purple-600 font-bold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300"
+              className="px-8 py-4 rounded-2xl bg-white text-[#003f87] font-bold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300"
             >
               ➡️ Sign Up Now
             </Link>
@@ -492,7 +492,7 @@ export default function AboutPage() {
         >
           <p className="text-gray-600 mb-2 text-lg font-light">Have questions or feedback?</p>
           <p className="text-gray-500">
-            Check out our <Link to="/faq" className="text-pink-600 hover:text-purple-600 font-semibold hover:underline transition-colors">FAQ page</Link> or 
+            Check out our <Link to="/faq" className="text-[#ff6b35] hover:text-[#003f87] font-semibold hover:underline transition-colors">FAQ page</Link> or 
             reach out through our support channels.
           </p>
         </div>
