@@ -276,7 +276,7 @@ export default function HomePage() {
         ) : visibleItems.length === 0 ? (
           <div className="text-center py-12">
             <p className="text-3xl mb-2">📦</p>
-            <p className="text-gray-600 font-medium">No items found</p>
+            <p className="text-gray-600 font-medium">Be the first to list an item today !!</p>
             <p className="text-sm text-gray-500 mt-1">Try different filters</p>
           </div>
         ) : (
